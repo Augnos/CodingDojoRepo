@@ -1,0 +1,23 @@
+h1 {
+    color: aqua;
+    background-color: black;
+    font-family: Comic Sans MS;
+}
+
+span {
+    color: white;
+}
+
+h2 {
+    color: white;
+    background-color: blueviolet;
+    text-align: center;
+    font-style: italic;
+    font-family: sans-serif, Helvetica, sans-serif;
+}
+
+h3 {
+    background-color: skyblue;
+    text-align: right;
+    font-family: Comic Sans MS;
+}

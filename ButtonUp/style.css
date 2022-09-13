@@ -1,0 +1,24 @@
+#searchText {
+    padding-right: 30px;
+    padding-left: 30px;
+    color: rgb(13, 155, 157);
+    background-color: rgb(245, 245, 245);
+    border: 2px solid rgb(13, 155, 157);
+    border-radius: 20px;
+}
+
+#moreText {
+    color: white;
+    background-color: rgb(0,209,178);
+    border: solid;
+    border-radius: 50%;
+}
+
+#createText {
+    padding-right: 15px;
+    padding-left: 15px;
+    color: white;
+    background-color: rgb(126, 126, 255);
+    border: 2px solid black;
+    box-shadow: 2px 2px 1px black;
+}
