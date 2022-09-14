@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 82pt;
+}
+
+/* body > div {
+    height: 300px;
+} */
+
+div {
+    margin: 20px;
+    padding: 20px;
+}
+
+.pink {
+    background-color: rgb(243, 123, 150);
+}
+
+.black {
+    background-color: rgb(0, 0, 10);
+}
+
+.green {
+    background-color: rgb(109, 254, 198);
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.row2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+img {
+    height: 300px;
+}

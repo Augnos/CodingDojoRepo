@@ -1,0 +1,38 @@
+* {
+    padding: 0; /* Remove padding */
+    margin: 0;  /* Remove margins */
+    font-family: Roboto;
+}
+
+.nav {
+    padding: 10px;
+    background-color: rgb(51, 51, 51);
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-title {
+    color: white;
+}
+
+.nav-links {
+    list-style-type: none;  /* Remove bullets */
+    display: flex;
+    align-items: center;
+}
+
+a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+
+}
+
+.btn {
+    padding: 2px 5px;
+    color: white;
+    font-size: 10pt;
+    background-color: rgb(25, 162, 184);
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+}
