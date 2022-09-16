@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: helvetica;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#userCard {
+    margin-top: 30px;
+    height: 0px auto;
+    width: 500px;
+    border: 2px solid rgb(204, 204, 204);
+}
+
+#cardTop {
+    background-color: rgb(25, 162, 184);
+    height: 70px;
+}
+
+#userCardContent {
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+#userCardContent > div {
+    padding-bottom: 10px;
+}
+
+#pfp {
+    margin-top: -35px;
+    height: 70px;
+    width: 70px;
+}
+#pfpButton, #pfpIcon {
+    height: 100%;
+    width: 100%;
+}
+#pfpButton {
+    padding: 3px;
+    background-color: white;
+    border: 2px solid grey;
+    border-radius: 100%;
+}
+
+#userName {
+    font-size: 18pt;
+}
+
+#location, #editProfile {
+    height: 20px;
+}
+
+img {
+    vertical-align: middle;
+    margin-right: 3px;
+    height: 100%;
+}
+
+#editProfile {
+    font-size: 10pt;
+}
