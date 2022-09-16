@@ -11,7 +11,8 @@ body {
     align-items: center;
 }
 
-#navbar {
+#navbarContainer {
+    color: white;
     background-color: black;
     height: 75px;
     width: 100vw;
@@ -20,26 +21,55 @@ body {
     align-items: center;
 }
 
-#navbarContent {
+#navbar {
     height: 85%;
     width: 85%;
-    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navigation {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+li {
+    padding-right: 30px;
+}
+
+#signoutButton {
+    font-size: 1.25em;
+    padding: 3px;
+    border: 1px solid black;
+    background-color: rgb(22, 162, 184);
+    color: white;
+}
+
+#homeButton {
+    font-size: 2em;
 }
 
 #main {
     height: 100vh;
     width: 85%;
-    background-color: aqua;
     display: flex;
     justify-content: space-between;
 }
 
 #profile {
     flex: 2;
-    background-color: black;
+    margin-right: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#sidebar {
+    flex: 1;
+    margin-left: 20px;
 }
 
 #userCard {
@@ -48,10 +78,12 @@ body {
     width: 100%;
     border: 2px solid rgb(204, 204, 204);
 }
+
 #cardTop {
     background-color: rgb(25, 162, 184);
     height: 70px;
 }
+
 #userCardContent {
     background-color: white;
     padding: 0px 20px;
@@ -59,42 +91,110 @@ body {
     flex-direction: column;
     align-content: flex-start;
 }
-#userCardContent > div {
+
+#userCardContent>div {
     padding-bottom: 10px;
 }
+
 #pfp {
     margin-top: -35px;
     height: 70px;
     width: 70px;
 }
-#pfpButton, #pfpIcon {
+
+#pfpButton,
+#pfpIcon {
     height: 100%;
     width: 100%;
+    border-radius: 100%;
+    box-shadow: 0px 0px 5px black;
 }
+
 #pfpButton {
     padding: 3px;
     background-color: white;
     border: 2px solid grey;
     border-radius: 100%;
 }
-#userName {
-    font-size: 18pt;
+
+h1 {
+    font-size: 2em;
 }
-#location, #editProfile {
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-size: 1em;
+    color: grey;
+    margin-bottom: 10px;
+}
+
+
+
+#location,
+#editProfile {
     height: 20px;
 }
+
 img {
     vertical-align: middle;
     margin-right: 3px;
     height: 100%;
 }
+
 #editProfile {
     font-size: 10pt;
 }
 
-#sidebar {
-    flex: 1;
-    background-color: orange;
+.box {
+    margin-top: 30px;
+    height: 0px auto;
+    width: 100%;
+    border: 2px solid rgb(204, 204, 204);
 }
 
+.boxTop {
+    padding: 10px 20px;
+    background-color: rgb(51, 51, 51);
+    color: white;
+}
 
+.boxContent {
+    padding: 10px 20px;
+    background-color: white;
+
+}
+
+.boxContent img {
+    border-radius: 100%;
+    box-shadow: 0px 0px 3px black;
+}
+
+.boxBottom {
+    padding: 10px 20px;
+    background-color: white);
+    border-top: 2px solid rgb(204, 204, 204);
+}
+
+span {
+    margin: 5px;
+    padding: 3px 7px;
+    background-color: rgb(153, 153, 153);
+    border-radius: 100%;
+}
+
+.connections {
+    margin: 5px;
+    height: 30px;
+}
+#approveDeny {
+    padding: 10px 20px;
+}
+
+#connectRequests {
+    display: flex;
+    justify-content: space-between;
+}

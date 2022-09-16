@@ -10,8 +10,18 @@
 </head>
 
 <body>
-    <div id="navbar">
-        <div id="navbarContent"></div>
+    <div id="navbarContainer">
+        <div id="navbar">
+            <ol id="navigation">
+                <li id="homeButton">Profile</li>
+                <li>Home</li>
+                <li>My Profile</li>
+                <li>Find Connections</li>
+            </ol>
+            <div id="navbarSignout">
+                <button id="signoutButton">Sign Out</button>
+            </div>
+        </div>
     </div>
     <div id="main">
         <div id="profile">
@@ -20,10 +30,10 @@
                 <div id="userCardContent">
                     <div id="pfp">
                         <button id="pfpButton">
-                            <img id="pfpIcon" src="icons/user-circle.png" alt="user circle">
+                            <img id="pfpIcon" src="images/jane-m.jpg" alt="user circle">
                         </button>
                     </div>
-                    <div id="userName">Jane Doe</div>
+                    <h1>Jane Doe</h1>
                     <div id="location">
                         <img src="icons/map-marker.png" alt="map marker"> Seattle
                     </div id="location">
@@ -33,13 +43,71 @@
                     </div id="bio">
                     <div id="editProfile">
                         <img src="icons/gear.png" alt="gear">
-                        <a href="http://">edit profile</a>
+                        <a href="#">edit profile</a>
                     </div>
                 </div>
             </div>
+            <div class="box">
+                <div class="boxTop">Education</div>
+                <div class="boxContent">
+                    <h2>Coding Dojo - Full Stack Bootcamp</h2>
+                    <h3>Dec 2019 - Mar 2020</h3>
+                    <p>Triple black belt in Python, MERN, and C#...</p>
+                </div>
+            </div>
         </div>
-        <div id="sidebar"></div>
+        <div id="sidebar">
+            <div class="box">
+                <div class="boxTop"><span>2</span>Connection Requests</div>
+                <div id="connectRequests">
+                    <div class="boxContent">
+                        <div class="connections">
+                            <img src="images/todd-s.jpg" alt="user circle">
+                            Todd E
+                        </div>
+                        <div class="connections">
+                            <img src="images/phil-s.jpg" alt="user circle">
+                            Phil K
+                        </div>
+                    </div>
+                    <div id="approveDeny">
+                        <div class="connections">
+                            <img src="icons/accept-circle.png" alt="accept">
+                            <img src="icons/close-circle.png" alt="decline">
+                        </div>
+                        <div class="connections">
+                            <img src="icons/accept-circle.png" alt="accept">
+                            <img src="icons/close-circle.png" alt="decline">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="boxTop"><span>500+</span>Your Connections</div>
+                <div class="boxContent">
+                    <div class="connections">
+                        <img src="images/adrien-s.jpg" alt="user circle">
+                        Adrien D
+                    </div>
+                    <div class="connections">
+                        <img src="images/anne-s.jpg" alt="user circle">
+                        Anne J
+                    </div>
+                    <div class="connections">
+                        <img src="images/alayne-s.jpg" alt="user circle">
+                        Alayne T
+                    </div>
+                    <div class="connections">
+                        <img src="images/arry-s.jpg" alt="user circle">
+                        Arry Y
+                    </div>
+                </div>
+                <div class="boxBottom"><a href="#">View More</a></div>
+            </div>
+        </div>
     </div>
+    </div>
+
 
 </body>
 
