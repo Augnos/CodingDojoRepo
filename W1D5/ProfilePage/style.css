@@ -4,34 +4,64 @@
     font-family: helvetica;
 }
 
+
 body {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#navbar {
+    background-color: black;
+    height: 75px;
+    width: 100vw;
+    display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+#navbarContent {
+    height: 85%;
+    width: 85%;
+    background-color: blue;
+}
+
+#main {
+    height: 100vh;
+    width: 85%;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+}
+
+#profile {
+    flex: 2;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #userCard {
     margin-top: 30px;
     height: 0px auto;
-    width: 500px;
+    width: 100%;
     border: 2px solid rgb(204, 204, 204);
 }
-
 #cardTop {
     background-color: rgb(25, 162, 184);
     height: 70px;
 }
-
 #userCardContent {
+    background-color: white;
     padding: 0px 20px;
     display: flex;
     flex-direction: column;
     align-content: flex-start;
 }
-
 #userCardContent > div {
     padding-bottom: 10px;
 }
-
 #pfp {
     margin-top: -35px;
     height: 70px;
@@ -47,21 +77,24 @@ body {
     border: 2px solid grey;
     border-radius: 100%;
 }
-
 #userName {
     font-size: 18pt;
 }
-
 #location, #editProfile {
     height: 20px;
 }
-
 img {
     vertical-align: middle;
     margin-right: 3px;
     height: 100%;
 }
-
 #editProfile {
     font-size: 10pt;
 }
+
+#sidebar {
+    flex: 1;
+    background-color: orange;
+}
+
+

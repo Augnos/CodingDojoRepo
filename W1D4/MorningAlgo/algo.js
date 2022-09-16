@@ -27,8 +27,8 @@ function isPal(arr) {
     return "Pal-indrome!";
 }
     
-var result1 = isPal("racecar");
+var result1 = isPal([6, 5, 4, 4, 5, 5]);
 console.log(result1);
     
-var result2 = isPal("rats live on no evil stars");
+var result2 = isPal("rats live on no evil star");
 console.log(result2)
