@@ -8,11 +8,13 @@ var rand = Math.random();
 //roll a die and output randomly 1-6
 //return that random number, no decimals!
 function d6(){
-    return Math.ceil((Math.random() * 6));
+    // return Math.ceil((Math.random() * 6));       not truly equal, 0 has a slightly larger chancewith Math.ceil
 
+    //                              range offset    Range and offset with Math.random is used to create an RNG for any collections of integers. 
+    return Math.floor((Math.random() * 6 + 1));
 }
 
-console.log(d6());
+console.log("Roll D6: " + d6());
 
 function eightBall(){
     var lifesAnswers = [
@@ -41,4 +43,4 @@ function eightBall(){
     return lifesAnswers[Math.floor((Math.random() * lifesAnswers.length))];
 }
 
-console.log(eightBall());
+console.log("8 Ball says: " + eightBall());
