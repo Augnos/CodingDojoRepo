@@ -1,0 +1,21 @@
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(200, 200, 200);
+}
+
+/* Fixed width container class that will "auto-center" itself */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    width: fit-content;
+    background-color: lightpink;
+    border: 3px solid black;
+    padding: 10px;
+    margin: 5px;
+}
