@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DojoWeather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- NavBar -->
+    <div id="top">
+        <div id="navigation">
+            <h1>DojoWeather</h1>
+            <ul id="citiesList">
+                <li onclick="loading()">Burbank</li>
+                <li onclick="loading()">Chicago</li>
+                <li onclick="loading()">Dallas</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainTop">
+        <span id="cityTitle">San Jose</span>
+        <span id="tempUnits">show temperature in
+            <select>
+                <option>°C</option>
+                <option>°F</option>
+            </select>
+        </span>
+    </div>
+
+    <!-- Forecast -->
+    <div id="forecast">
+        <div class="weatherBox">
+            <h2>Today</h2>
+            <img src="assets/some_rain.png" alt="some rain">
+            <p>some rain</p><br>
+            <p><span class="highTemp">24°</span><span class="lowTemp">18°</span></p>
+        </div>
+        <div class="weatherBox">
+            <h2>Tomorrow</h2>
+            <img src="assets/some_sun.png" alt="some sun">
+            <p>some sun</p><br>
+            <p><span class="highTemp">24°</span><span class="lowTemp">18°</span></p>
+        </div>
+        <div class="weatherBox">
+            <h2>Friday</h2>
+            <img src="assets/some_clouds.png" alt="some clouds">
+            <p>some clouds</p><br>
+            <p><span class="highTemp">24°</span><span class="lowTemp">18°</span></p>
+        </div>
+        <div class="weatherBox">
+            <h2>Saturday</h2>
+            <img src="assets/some_sun.png" alt="some sun">
+            <p>some sun</p><br>
+            <p><span class="highTemp">24°</span><span class="lowTemp">18°</span></p>
+        </div>
+    </div>
+
+    <!-- Cookie Policy -->
+    <div id="cookieContainer">
+        <div id="cookies">
+            <img src="assets/cookie.png" alt="cookie">
+            <div id="cookieText">
+                <h3>Stop! Cookie time</h3>
+                <p>We use cookies (sadly not the edible ones) to personalize content and ads, to provide social media
+                    features and to analyze our traffic. <a href="#">Read more...</a></p>
+            </div>
+            <button id="cookieButton" onclick="acceptCookies(cookieContainer)">I Accept</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

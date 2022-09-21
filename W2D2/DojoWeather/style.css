@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+}
+
+#top {
+    background-color: #9fc5f8;
+    width: 100vw;
+}
+
+#navigation {
+    width: 65%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#navigation > h1, #citiesList{
+    padding: 20px 0px;
+}
+
+#citiesList {
+    width: 50%;
+    font-size: 1.5em;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+#mainTop {
+    width: 65%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid black;
+}
+
+#cityTitle, #tempUnits {
+    padding: 20px 0px;
+}
+
+#cityTitle {
+    font-size: 2em;
+}
+
+#forecast {
+    width: 65%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weatherBox {
+    background-color: #eeeeee;
+    width: 22%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px 0px;
+}
+
+.weatherBox h2, .weatherBox img, .weatherBox p {
+    width: 80%;
+    text-align: center;
+}
+
+.weatherBox p {
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.weatherBox img {
+    border-radius: 100%;
+    padding: 10px;
+}
+
+.highTemp {
+    color: #cf2927;
+}
+.lowTemp {
+    color: #2b78e4;
+}
+
+#cookieContainer{
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+}
+
+#cookies {
+    margin: 0px auto;
+    background-color: #eeeeee;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+}
+
+#cookies > * {
+    flex: 1;
+    padding: 10px;
+    margin: 10px;
+}
+
+#cookieText {
+    flex: 6;
+}
+
+#cookieText > * {
+    margin: 10px 0px;
+}
+
+#cookieButton {
+    flex: 1;
+    border: 2px solid black;
+    background-color: #9fc5f8;
+    box-shadow: 2px 2px 2px black;
+}
