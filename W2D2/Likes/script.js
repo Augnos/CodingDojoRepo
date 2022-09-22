@@ -1,5 +1,5 @@
 console.log("test");
 
-function liked(self) {
-    self.innerText++;
+function liked(element) {
+    element.innerText++;
 }
