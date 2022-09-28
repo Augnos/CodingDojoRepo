@@ -1,0 +1,15 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+.special{
+    border: 2px solid orangered;
+    background-color: lightpink;
+    color: burlywood;
+}
+
+.form-control {
+    font-size: 2em;
+    color: white;
+}
