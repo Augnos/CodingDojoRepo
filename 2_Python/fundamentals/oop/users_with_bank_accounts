@@ -1,0 +1,102 @@
+class BankAccount:
+
+    # class attributes
+    balance = 0
+
+    # instance attributes
+    def __init__(self, int_rate, checking_balance, savings_balance): 
+        self.int_rate = int_rate
+        self.checking_balance = checking_balance
+        self.savings_balance = savings_balance
+
+    # instance methods
+    def checking_deposit(self, amount):
+        self.checking_balance += amount
+        return(self)
+
+    def savings_deposit(self, amount):
+        self.savings_balance += amount
+        return(self)
+
+    def checking_withdraw(self, amount):
+        if (self.checking_balance < amount):
+            print("Insufficient funds: Charging a $5 fee")
+            self.checking_balance -= 5
+        else:
+            self.checking_balance -= amount
+            print(f"withdrawing {amount} from checking account...")
+        return(self)
+
+    def savings_withdraw(self, amount):
+        if (self.savings_balance < amount):
+            print("Insufficient funds: Charging a $5 fee")
+            self.savings_balance -= 5
+        else:
+            self.savings_balance -= amount
+            print(f"withdrawing {amount} from savings account...")
+        return(self)
+
+    def display_account_info(self):
+        print(f"Checking Balance: {self.checking_balance}")
+        print(f"Savings Balance: {self.savings_balance}")
+        return(self)
+
+    def yield_interest(self):
+        if self.savings_balance > 0:
+            self.savings_balance = self.savings_balance * (1 + self.int_rate)
+        return(self)
+
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+        self.account = BankAccount(int_rate=0.02, checking_balance=0, savings_balance=0)
+    
+    # other methods
+    def make_checking_deposit(self, amount):
+        self.account.checking_deposit(amount)
+        print(f"Depositing {amount} to {self.name}'s checking account...")
+        print(f"New checking balance: {self.account.checking_balance}")
+        return(self)
+
+    def make_savings_deposit(self, amount):
+        self.account.savings_deposit(amount)
+        print(f"Depositing {amount} to {self.name}'s savings account...")
+        print(f"New savings balance: {self.account.savings_balance}")
+        return(self)
+
+    def make_checking_withdrawal(self, amount):
+        self.account.checking_withdraw(amount)
+        return(self)
+
+    def make_savings_withdrawal(self, amount):
+        self.account.savings_withdraw(amount)
+        return(self)
+    
+    def display_user_balance(self):
+        print(f"Checking balance: {self.account.checking_balance}")
+        print(f"Savings balance: {self.account.savings_balance}")
+        return(self)
+
+    def transfer_money(self, amount, other_user):
+        print(f"Transferring {amount} to {other_user.name}...")
+        if self.account.checking_balance > amount:
+            self.account.checking_balance -= amount
+            other_user.account.checking_balance += amount
+            print(f"{self.name}'s new checking balance: {self.account.checking_balance}")
+            print(f"{other_user.name}'s new checking balance: {other_user.account.checking_balance}")
+            return(self)
+        else:
+            return(print(f"Insufficient funds in {self.name}'s checking account."))
+
+
+
+user1 = User("Ricardo Sanchez", "rick@gmail.com")
+user2 = User("Lisa Simpson", "lisa@gmail.com")
+
+user1.make_checking_deposit(2000)
+
+
+# Attempting the senpai challenge.
+user1.transfer_money(1000, user2)
+
