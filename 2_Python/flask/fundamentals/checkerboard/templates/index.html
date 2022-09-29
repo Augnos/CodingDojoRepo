@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <h1 class="text-center mx-auto my-3 p-1" style="width: 400px; color: {{ color1 }}; background-color: {{ color2 }}">
+        *** Checkerboard ***
+    </h1>
+    <!-- class="d-flex flex-column justify-content-center align-items-center" -->
+    <div id="checkerboard">
+        {% for y in range(0,checkerY): %}
+            {% if ( y % 2 == 0): %}
+                <div class="d-flex justify-content-center">
+                {% for x in range(0,checkerX): %}
+                    {% if ( x % 2 == 1): %}
+                        <div class="box" style="background-color: {{color1}} "></div>
+                    {% else: %}
+                        <div class="box" style="background-color: {{color2}} "></div>
+                    {% endif %}
+                {% endfor %}
+            {% else: %}
+                <div class="d-flex justify-content-center">
+                {% for x in range(0,checkerX): %}
+                    {% if ( x % 2 == 0): %}
+                        <div class="box" style="background-color: {{color1}} "></div>
+                    {% else: %}
+                        <div class="box" style="background-color: {{color2}} "></div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
+
+
+</body>
+
+</html>
