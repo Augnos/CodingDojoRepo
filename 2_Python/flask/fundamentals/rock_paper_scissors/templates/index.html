@@ -2,26 +2,76 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- My CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- My CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body>
-    <form action="/pick" method="post">
-        <select name="picked">
-            <option value="0">Rock</option>
-            <option value="1">Paper</option>
-            <option value="2">Scissor</option>
-        </select>
-        <button class="btn bg-light" type="submit">Submit</button>
-    </form>
+<body class="w-75 mx-auto">
+  <form action="/pick" method="post" class="my-3 d-flex flex-column justify-content-around">
 
+    <div class="d-flex justify-content-around my-3">
+
+      <div class="imgContainer mx-3 d-flex flex-column justify-content-start align-items-center">
+        <img class="" src="{{ url_for('static', filename='img/rock.png') }}">
+        <div class="card-body">
+          <h5 class="card-title">ROCK</h5>
+        </div>
+      </div>
+
+      <div class="imgContainer mx-3 d-flex flex-column justify-content-start align-items-center">
+        <img class="" src="{{ url_for('static', filename='img/paper.png') }}">
+        <div class="card-body">
+          <h5 class="card-title">PAPER</h5>
+        </div>
+      </div>
+
+      <div class="imgContainer mx-3 d-flex flex-column justify-content-start align-items-center">
+        <img class="scissors" src="{{ url_for('static', filename='img/scissors.png') }}">
+        <div class="card-body">
+          <h5 class="card-title">SCISSORS</h5>
+        </div>
+      </div>
+
+    </div>
+
+
+    {% if result == "cpu_wins" %}
+    <h4 class="text-muted text-center">You picked {{ user_pick }}</h4>
+    <h4 class="text-muted text-center">Computer picked {{ cpu_pick }}</h4>
+    <h1 class="text-center text-danger">Computer Wins!</h1>
+    <a href="/" class="btn my-3 bg-warning" type="submit">Play Again</a>
+    
+    {% elif result == "user_wins" %}
+    <h4 class="text-muted text-center">You picked {{ user_pick }}</h4>
+    <h4 class="text-muted text-center">Computer picked {{ cpu_pick }}</h4>
+    <h1 class="text-center text-success">You Win!</h1>
+    <a href="/" class="btn my-3 bg-warning" type="submit">Play Again</a>
+    
+    {% elif result == "tied_game" %}
+    <h4 class="text-muted text-center">You picked {{ user_pick }}</h4>
+    <h4 class="text-muted text-center">Computer picked {{ cpu_pick }}</h4>
+    <h1 class="text-center">Tie!</h1>
+    <a href="/" class="btn my-3 bg-warning" type="submit">Play Again</a>
+    
+    {% else %}
+    <div class="d-flex flex-column justify-content-around">
+      <select class="" name="picked">
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+      </select>
+      <button class=" btn my-3 bg-warning" type="submit">Submit</button>
+    </div>
+
+    {% endif %}
+  </form>
 
 </body>
 

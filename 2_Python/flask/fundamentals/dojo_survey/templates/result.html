@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- My CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <div class="container w-50 my-3 p-4 border bg-light rounded border-dark">
+    <h3 class="row m-3">Submitted Information:</h3>
+    
+    <div class="row mb-3">
+      <div class="col">Name:</div>
+      <div class="col">{{ session_name }}</div>
+    </div>
+    
+    <div class="row mb-3">
+      <div class="col">Location:</div>
+      <div class="col">{{ session_location }}</div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col">Favorite Language:</div>
+      <div class="col">{{ session_language }}</div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col">Comments:</div>
+      <div class="col">{{ session_comments }}</div>
+    </div>
+
+    <a href="/" class="btn btn-primary">Go Back</a>
+
+  </div>
+</body>
+
+</html>

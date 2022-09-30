@@ -6,33 +6,37 @@ import random
 
 @app.route('/')
 def index():
-    session["cpu_pick"] = random.randint(0,2)
+    pick = ["rock", "paper", "scissors"]
+    session["cpu_pick"] = pick[random.randint(0,2)]
+    print(session["cpu_pick"])
     return render_template('index.html')
 
-# pick = {
-#     [0, "rock"]
-#     [1, "paper"]
-#     [2, "scissors"]}
     
 @app.route('/pick', methods=['POST'])
 def pick():
-    user_pick = int(request.form['picked'])
+    session['user_pick'] = request.form['picked']
+    
     if (
-        (user_pick == 1 and session["cpu_pick"] == 0) or 
-        (user_pick == 2 and session["cpu_pick"] == 1) or 
-        (user_pick == 0 and session["cpu_pick"] == 2)):
+        (request.form['picked'] == "paper" and session["cpu_pick"] =="rock") or 
+        (request.form['picked'] == "scissors" and session["cpu_pick"] == "paper") or 
+        (request.form['picked'] == "rock" and session["cpu_pick"] == "scissors")):
             print("user wins!")
+            session['game_result'] = "user_wins"
     elif ( # lose situations
-        (session["cpu_pick"] == 1 and user_pick == 0) or
-        (session["cpu_pick"] == 2 and user_pick == 1) or
-        (session["cpu_pick"] == 0 and user_pick == 2)):
+        (session["cpu_pick"] == "paper" and request.form['picked'] == "rock") or
+        (session["cpu_pick"] == "scissors" and request.form['picked'] == "paper") or
+        (session["cpu_pick"] == "rock" and request.form['picked'] == "scissors")):
             print("cpu wins!")
+            session['game_result'] = "cpu_wins"
     else:
         print("tied!")
-        
-    session["cpu_pick"] = random.randint(0,2)
+        session['game_result'] = "tied_game"
 
-    return redirect('/')
+    return redirect('/result')
+
+@app.route('/result')
+def result():
+    return render_template('index.html', result = session['game_result'], user_pick = session['user_pick'], cpu_pick = session['cpu_pick'])
 
 
 if __name__=="__main__":

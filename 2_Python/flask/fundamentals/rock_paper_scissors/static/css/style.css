@@ -1,5 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    background-color: turquoise;
+img {
+width: 150px;
+    object-fit: cover;
 }
