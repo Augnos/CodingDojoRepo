@@ -122,7 +122,7 @@ const expected10 = false;
 
 
 
-function bracketCounter(index, opener, closer) {
+function bracketCounter(arr, opener, closer) {
     counter = 0;
 
     for (i = 0; i < arr.length; i++) {

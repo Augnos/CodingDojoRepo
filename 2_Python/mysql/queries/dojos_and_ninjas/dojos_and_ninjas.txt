@@ -1,0 +1,35 @@
+INSERT INTO dojos (name)
+VALUES ('San Jose'), ('Burbank'), ('Seattle');
+
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM dojos;
+
+INSERT INTO dojos (name)
+VALUES ('San Jose'), ('Burbank'), ('Seattle');
+
+INSERT INTO ninjas (dojo_id, first_name, last_name)
+VALUES (4, 'John', 'Doe'), (4, 'Jane', 'Doe'), (4, 'James', 'Doe');
+
+INSERT INTO ninjas (dojo_id, first_name, last_name)
+VALUES (5, 'Rick', 'James'), (5, 'Michael', 'Jackson'), (5, 'Eddy', 'Van Halen');
+
+INSERT INTO ninjas (dojo_id, first_name, last_name)
+VALUES (6, 'Charli', 'XCX'), (6, 'Sophie', 'Slater'), (6, 'Queen', 'Bee');
+
+SELECT *
+FROM ninjas
+WHERE id=4;
+
+SELECT *
+FROM ninjas
+WHERE id=6;
+
+
+SELECT dojo_id
+FROM ninjas
+ORDER BY id DESC
+LIMIT 1;
+
+
+SELECT *
+FROM dojos;

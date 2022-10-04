@@ -1,0 +1,8 @@
+SELECT *
+FROM names;
+
+insert into names (name)
+values('Josh');
+
+insert into names (name)
+values('Rick'), ('Morty');
