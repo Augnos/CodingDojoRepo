@@ -1,0 +1,25 @@
+(import pymysql.xxxxxx will not return any website)
+
+(class MySQLConnection: named wrong)
+(self.connection = xxxxxx)
+NameError
+NameError: name 'xxxxxx' is not defined
+
+(host incorrect)
+OperationalError
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhosat' ([Errno 8] nodename nor servname provided, or not known)")
+
+
+(user/password incorrect)
+RuntimeError
+RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+
+(cursorclass incorrect)
+AttributeError
+AttributeError: module 'pymysql.cursors' has no attribute 'sor'
+
+(query = cursor.mgrify(query, data)
+TypeError
+TypeError: 'bool' object is not iterable
+
