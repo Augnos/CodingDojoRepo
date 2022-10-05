@@ -1,0 +1,4 @@
+.fruitContainer img {
+    height: 106px;
+    object-fit: cover;
+}
