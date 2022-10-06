@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="row">All Users</h1>
+        <div class="row">
+            <div class="table border border-dark">
+                <thead>
+                    <tr>
+                        <th scope="col-3">ID</th>
+                        <th scope="col-3">Full Name</th>
+                        <th scope="col-3">Email</th>
+                        <th scope="col-3">Created At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for one_user in all_users %}
+                    <tr>
+                        <td>First Name: {{one_user.first_name}}</td>
+                        <td>Last Name: {{one_user.last_name}}</td>
+                        <td>Email: {{one_user.email}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
