@@ -12,24 +12,45 @@ class User:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
-    # Now we use class methods to query our database
+
+    # ---------- Get All -----------
     @classmethod
     def get_all(cls):
         query = "SELECT * FROM users;"
-        # make sure to call the connectToMySQL function with the schema you are targeting.
         results = connectToMySQL('users_schema').query_db(query)
-        # Create an empty list to append our instances of users
         users = []
-        # Iterate over the db results and create instances of users with cls.
         for user in results:
             users.append(cls(user))
         return users
-    
+
+
+    # ---------- Get One -----------
     @classmethod
-    def save(cls, data ):
+    def get_one(cls,id):
+        query = "SELECT * FROM users WHERE id = " + id + ";"
+        results = connectToMySQL('users_schema').query_db(query)
+        users = []
+        for user in results:
+            users.append(cls(user))
+        return users
+
+
+    # ---------- Save New User -----------
+    @classmethod
+    def save_new_user(cls, data ):
         query = "INSERT INTO users ( first_name , last_name , email , created_at, updated_at ) VALUES ( %(fname)s , %(lname)s , %(eaddress)s , NOW() , NOW() );"
-        # data is a dictionary that will be passed into the save method from server.py
         return connectToMySQL('users_schema').query_db( query, data )
 
-    # import the function that will return an instance of a connection
-# model the class after the friend table from our database
+
+    # ---------- Edit User? -----------
+    @classmethod
+    def edit_user(cls, data ):
+        query = "UPDATE users SET first_name = %(fname)s , last_name = %(lname)s , email = %(eaddress)s , updated_at = NOW() WHERE id = %(id)s;"
+        return connectToMySQL('users_schema').query_db( query, data )
+
+
+    # ---------- Delete User -----------
+    @classmethod
+    def delete(cls, data ):
+        query = "DELETE FROM users WHERE id = %(id)s;"
+        return connectToMySQL('users_schema').query_db( query, data )

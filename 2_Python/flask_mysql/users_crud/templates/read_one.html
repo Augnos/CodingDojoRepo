@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User {{ id }} </title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <h1 class="text-center my-3">User {{user_id}}</h1>
+    <div class="container">
+        <table class="table col-6 mx-auto border border-3">
+            {% for one_user in all_users %}
+            <tr>
+                <th>Full Name: </th>
+                <td>{{ one_user.first_name }} {{ one_user.last_name }}</td>
+            </tr>
+            <tr>
+                <th>Email: </th>
+                <td>{{ one_user.email }} </td>
+            </tr>
+            <tr>
+                <th>Created On:</th>
+                <td>{{ one_user.created_at }}</td>
+            </tr>
+            <tr>
+                <th>Last Updated On: </th>
+                <td>{{ one_user.updated_at }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="text-center">
+            <a href="/users/{{user_id}}/edit">Edit</a> | 
+            <a href="/users/{{user_id}}/destroy">Delete</a><br>
+            <a href="/">Go Back</a>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
