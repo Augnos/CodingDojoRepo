@@ -7,6 +7,7 @@ app = Flask(__name__)
 def index():
     # call the get all classmethod to get all friends
     friends = Friend.get_all()
+    print('testing...')
     print(friends)
     return render_template("index.html", all_friends = friends)
             
