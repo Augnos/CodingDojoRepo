@@ -31,59 +31,61 @@ const newInv3 = [{ name: "Peanut Butter", quantity: 20 }];
 const currInv3 = [];
 const expected3 = [{ name: "Peanut Butter", quantity: 20 }];
 
-function updateInventory(inv1, inv2) {
-    if (inv1.length > inv2.length){
-        bigInv = inv1;
-        smolInv = inv2;
-    } else {
-        bigInv = inv2;
-        smolInv = inv1;
-    }
-    
-    for (i=2; i < bigInv.length; i++) {
-        for (x in bigInv[i]){
-            if (smolInv[i][x] == undefined) {
-                console.log(false);
-                smolInv.push(bigInv[i][x])
+// function updateInventory(inv1, inv2) {
+//     if (inv1.length > inv2.length){
+//         bigInv = inv1;
+//         smolInv = inv2;
+//     } else {
+//         bigInv = inv2;
+//         smolInv = inv1;
+//     }
+
+//     for (i=2; i < bigInv.length; i++) {
+//         for (x in bigInv[i]){
+//             if (smolInv[i][x] == undefined) {
+//                 console.log(false);
+//                 smolInv.push(bigInv[i][x])
+//             }
+//         }
+//     }
+
+// }
+
+
+
+// solution
+function updateInventory(newInv = [], currInv = []) {
+    for (let i = 0; i < newInv.length; i++) {
+        let itemFound = false;
+        const newItem = newInv[i];
+
+        for (let j = 0; j < currInv.length; ++j) {
+            const currItem = currInv[j];
+
+            if (newItem.name === currItem.name) {
+                itemFound = true;
+                currItem.quantity += newItem.quantity;
+                // no need to keep looping over the rest of the items since we found what we are looking for
+                break;
             }
         }
+        // after looking through all current inventory
+        if (itemFound === false) {
+            currInv.push(newItem);
+        }
     }
-
+    return currInv;
 }
 
-console.log(updateInventory(newInv1,currInv1));
+// console.log alone will return "[{…}, {…}, {…}]". This function will print every object separately instead.
+function invLog(arr) {
+    for (i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+    }
+    console.log("invLog complete");
+    console.log("");
+}
 
-/*
---------- Problem # 2--------------------
-    Given a string that may have extra spaces at the start and the end,
-    return a new string that has the extra spaces at the start and the end trimmed (removed)
-    do not remove any other spaces.
-    
-    const str1 = "   hello world     ";
-    const expected1 = "hello world";
-    */
-
-/* 
-------------------problem  #3 ------------------
-    An anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
-    typically using all the original letters exactly once.
-    Is there a quick way to determine if they aren't an anagram before spending more time?
-    Given two strings
-    return whether or not they are anagrams
-    
-    const strA1 = "yes";
-    const strB1 = "eys";
-    const expected1 = true;
-    
-    const strA2 = "yes";
-    const strB2 = "eYs";
-    const expected2 = true;
-    
-    const strA3 = "no";
-    const strB3 = "noo";
-    const expected3 = false;
-    
-    const strA4 = "silent";
-    const strB4 = "listen";
-    const expected4 = true;
-    */
+invLog(updateInventory(newInv1, currInv1));
+invLog(updateInventory(newInv2, currInv2));
+invLog(updateInventory(newInv3, currInv3));
