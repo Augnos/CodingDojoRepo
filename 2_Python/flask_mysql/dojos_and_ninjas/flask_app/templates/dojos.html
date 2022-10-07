@@ -15,22 +15,27 @@
 
 <body>
     <div class="container">
-        <div class="row my-3 justify-content-between">
-            <div class="col-5">
-                <h2 class="row">New Dojo</h2>
-                <form class="row" action="/create_dojo">
-                    <div class="col">Name:</div>
-                    <input type="text">
+        <div class="row my-3 gx-5 justify-content-between">
+            <div class="col-5 p-3">
+                <h2 class="text-center">New Dojo</h2>
+                <form class="" action="/create_dojo" method="post">
+                    <label for="new_dojo_name" class="form-label">Name:</label>
+                    <div class="input-group mb-3">
+                        <input name="new_dojo_name" type="text" class="form-control" name="new_dojo_name" aria-describedby="basic-addon3">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Add Dojo">
                 </form>
             </div>
             <div class="col-5">
-                <h2 class="row">All Dojos</h2>
-                <ul class="row">
-                    <li>sample dojo</li>
-                </ul>
-                <div class="row">
-                    <a href="/ninja">Add Ninja</a>
+                <div class="bg-dark p-3">
+                    <h2 class="text-center text-white">All Dojos</h2>
+                    <ul class="list-group">
+                        {% for one_dojo in all_dojos %}
+                        <a href="/dojos/{{ one_dojo.id }}" class="list-group-item list-group-item-action">{{ one_dojo.name }}</a>
+                        {% endfor %}
+                    </ul>
                 </div>
+                <a href="/ninjas">Add Ninja</a>
             </div>
         </div>
     </div>
