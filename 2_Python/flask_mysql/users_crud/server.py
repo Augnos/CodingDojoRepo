@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect
 # import the class from user.py
 from user import User
 app = Flask(__name__)
