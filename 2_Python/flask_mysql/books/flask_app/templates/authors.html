@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row my-3 gx-5 justify-content-between">
+            <div class="col-5 p-3">
+                <h2 class="text-center">New Author</h2>
+                <form class="" action="/insert/author" method="post">
+                    <label for="name" class="form-label">Name:</label>
+                    <div class="input-group mb-3">
+                        <input name="name" type="text" class="form-control" aria-describedby="basic-addon3">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Add Author">
+                </form>
+            </div>
+            <div class="col-5">
+                <div class="bg-dark p-3">
+                    <h2 class="text-center text-white">All Authors</h2>
+                    <ul class="list-group">
+                        {% for one_author in all_authors %}
+                        <a href="/authors/{{ one_author.id }}" class="list-group-item list-group-item-action">{{ one_author.name }}</a>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <a href="/books">Add Book</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
