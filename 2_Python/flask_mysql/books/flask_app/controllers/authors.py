@@ -30,7 +30,7 @@ def authors_one(id):
     authors = Author.get_one(data)
     print(authors)
 
-    books = Book.get_fav(data)
+    books = Book.get_by_id(data)
     print(books)
     return render_template("author_favs.html", all_authors=authors, all_books = books)
 

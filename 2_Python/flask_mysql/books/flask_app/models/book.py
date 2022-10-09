@@ -1,4 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask_app.models import author
 
 
 class Book:
@@ -8,12 +9,14 @@ class Book:
         self.num_of_pages = data['num_of_pages']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
+        # list of the authors who has favorited this book
+        self.authors_who_favorited = []
 
     # ---------- Get All Books-----------
     @classmethod
     def get_all(cls):
         query = "SELECT * FROM books;"
-        results = connectToMySQL('books').query_db(query)
+        results = connectToMySQL('books_schema').query_db(query)
         books = []
         for book in results:
             books.append(cls(book))
@@ -23,7 +26,7 @@ class Book:
     @classmethod
     def get_one(cls, data):
         query = "SELECT * FROM books WHERE id = %(id)s;"
-        results = connectToMySQL('books').query_db(query, data)
+        results = connectToMySQL('books_schema').query_db(query, data)
         books = []
         for book in results:
             books.append(cls(book))
@@ -31,28 +34,38 @@ class Book:
 
     # ---------- Get Favorite books-----------
     @classmethod
-    def get_fav(cls, data):
-        query = "SELECT authors.name as 'favorited_by', books.title as 'title', books.num_of_pages as 'num_of_pages' FROM favorites LEFT JOIN authors ON authors.id = favorites.author_id LEFT JOIN books ON books.id = favorites.book_id WHERE authors.id = %(id)s;"
-        results = connectToMySQL('books').query_db(query, data)
-        authors = []
-        for author in results:
-            authors.append(cls(author))
-        return authors
+    def get_by_id(cls, data):
+        query = "SELECT * FROM books LEFT JOIN favorites ON books.id = favorites.book_id LEFT JOIN authors ON authors.id = favorites.author_id WHERE books.id = %(id)s;"
+        results = connectToMySQL('books_schema').query_db(query, data)
+        
+        book = cls(results[0])
+        
+        for row in results:
+            if row['authors.id'] == None:
+                break
+            data = {
+                "id": row['authors.id'],
+                "name": row['name'],
+                "created_at": row['authors.created_at'],
+                "updated_at": row['authors.updated_at']
+            }
+            book.authors_who_favorited.append(cls(book))
+        return book
 
     # ---------- Insert New Book-----------
     @classmethod
     def insert_new_book(cls, data):
         query = "INSERT INTO books ( title , num_of_pages , created_at, updated_at ) VALUES ( %(title)s , %(num_of_pages)s , NOW() , NOW() );"
-        return connectToMySQL('books').query_db(query, data)
+        return connectToMySQL('books_schema').query_db(query, data)
 
     # ---------- Update Book -----------
     @classmethod
     def update_book(cls, data):
         query = "UPDATE books SET updated_at = NOW() WHERE id = %(id)s;"
-        return connectToMySQL('books').query_db(query, data)
+        return connectToMySQL('books_schema').query_db(query, data)
 
     # ---------- Delete Book -----------
     @classmethod
     def delete(cls, data):
         query = "DELETE FROM books WHERE id = %(id)s;"
-        return connectToMySQL('books').query_db(query, data)
+        return connectToMySQL('books_schema').query_db(query, data)
