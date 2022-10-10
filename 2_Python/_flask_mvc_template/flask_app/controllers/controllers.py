@@ -1,5 +1,6 @@
+from flask import render_template, redirect, request
 from flask_app import app
-from flask import render_template, redirect, request, session, flash
+from flask_bcrypt import Bcrypt
 from flask_app.models.model import Model
 
 
@@ -15,21 +16,14 @@ def index():
 
 # ---------- Models (all) Page -----------
 @app.route("/models")
-def models_all():
-    models = Model.get_all()
-    print(models)
-    return render_template("models.html", all_models=models)
+def models():
+    return render_template("models.html", all_models = Model.select_all_models())
 
 
 # ---------- Models (one) Page -----------
 @app.route("/models/<id>")
 def models_one(id):
-    data = {
-        "id": id,
-    }
-    models = Model.get_one(data)
-    print(models)
-    return render_template("show_model.html", all_models=models)
+    return render_template("show_model.html", model = Model.get_one({"id":id})
 
 
 # ------------------------------------------------------
@@ -64,3 +58,22 @@ def delete_model(id):
     data = {"id": id}
     Model.delete(data)
     return redirect('/')
+
+
+# # ---------- Bcrypt Password Post -----------
+# @app.route('/register/user', methods=['POST'])
+# def register():
+#     # validate the form here ...
+#     # create the hash
+#     pw_hash = bcrypt.generate_password_hash(request.form['password'])
+#     print(pw_hash)
+#     # put the pw_hash into the data dictionary
+#     data = {
+#         "username": request.form['username'],
+#         "password" : pw_hash
+#     }
+#     # Call the save @classmethod on User
+#     user_id = User.save(data)
+#     # store user id into session
+#     session['user_id'] = user_id
+#     return redirect("/dashboard")
