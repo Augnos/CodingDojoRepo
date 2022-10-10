@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Show</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2 class="text-center my-3">{{ book.title }}</h2>
+                Favorited by:
+                <ul class="list-group">
+                    {% for author in book.authors_who_favorited %}
+                        <li>{{ author.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-6">
+                <h2 class="text-center my-3">Add {{ book.title }} to Favorites</h2>
+                <form action="/join/author" method="post" class="col-6 mx-auto">
+                    <input type="hidden" name="book_id" value="{{book.id}}">
+                    <div class="form-group">
+                        <label for="author_id">Author:</label>
+                        <select name="author_id" class="form-control">
+                            {% for author in unfavorited_authors %}
+                                <option value="{{ author.id }}">{{ author.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <input type="submit" value="Add Author" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <a href="/books" class="col-6 ">Home</a>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

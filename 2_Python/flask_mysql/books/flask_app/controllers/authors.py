@@ -16,7 +16,7 @@ def index():
 
 # ---------- Authors (all) Page -----------
 @app.route("/authors")
-def authors_all():
+def authors():
     authors = Author.get_all()
     print(authors)
     return render_template("authors.html", all_authors=authors)
@@ -24,15 +24,9 @@ def authors_all():
 
 # ---------- Authors (one) Page -----------
 @app.route("/authors/<int:id>")
-def authors_one(id):
-    data = {"id":id}
-
-    authors = Author.get_one(data)
-    print(authors)
-
-    books = Book.get_by_id(data)
-    print(books)
-    return render_template("author_favs.html", all_authors=authors, all_books = books)
+def show_author(id):
+    data = {"id": id}
+    return render_template("show_author.html", author=Author.get_by_id(data), unfavorited_books=Book.unfavorited_books(data))
 
 
 # ------------------------------------------------------
@@ -67,3 +61,14 @@ def delete_author(id):
     data = {"id": id}
     Author.delete(data)
     return redirect('/')
+
+
+# ---------- Join Book To Authors Favorites -----------
+@app.route('/join/book', methods=['POST'])
+def join_book():
+    data = {
+        'author_id': request.form['author_id'],
+        'book_id': request.form['book_id']
+    }
+    Author.add_favorite(data)
+    return redirect(f"/authors/{request.form['author_id']}")

@@ -23,14 +23,10 @@ def books_all():
 
 
 # ---------- Books (one) Page -----------
-@app.route("/books/<id>")
-def books_one(id):
-    data = {
-        "id": id,
-    }
-    books = Book.get_one(data)
-    print(books)
-    return render_template("show_book.html", all_books=books)
+@app.route('/books/<int:id>')
+def show_book(id):
+    data = {"id": id}
+    return render_template('show_book.html', book=Book.get_by_id(data), unfavorited_authors=Author.unfavorited_authors(data))
 
 
 # ------------------------------------------------------
@@ -66,3 +62,14 @@ def delete_book(id):
     data = {"id": id}
     Book.delete(data)
     return redirect('/')
+
+
+# ---------- Join Author to Book's Favorited -----------
+@app.route('/join/author',methods=['POST'])
+def join_author():
+    data = {
+        'author_id': request.form['author_id'],
+        'book_id': request.form['book_id']
+    }
+    Author.add_favorite(data)
+    return redirect(f"/books/{request.form['book_id']}")

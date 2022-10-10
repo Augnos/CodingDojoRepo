@@ -37,9 +37,7 @@ class Book:
     def get_by_id(cls, data):
         query = "SELECT * FROM books LEFT JOIN favorites ON books.id = favorites.book_id LEFT JOIN authors ON authors.id = favorites.author_id WHERE books.id = %(id)s;"
         results = connectToMySQL('books_schema').query_db(query, data)
-        
         book = cls(results[0])
-        
         for row in results:
             if row['authors.id'] == None:
                 break
@@ -49,8 +47,21 @@ class Book:
                 "created_at": row['authors.created_at'],
                 "updated_at": row['authors.updated_at']
             }
-            book.authors_who_favorited.append(cls(book))
+            book.authors_who_favorited.append(author.Author(data))
         return book
+
+
+    # ---------- Get Unfavorited Books -----------
+    @classmethod
+    def unfavorited_books(cls,data):
+        query = "SELECT * FROM books WHERE books.id NOT IN ( SELECT book_id FROM favorites WHERE author_id = %(id)s );"
+        results = connectToMySQL('books_schema').query_db(query,data)
+        books = []
+        for row in results:
+            books.append(cls(row))
+        print(books)
+        return books
+
 
     # ---------- Insert New Book-----------
     @classmethod
@@ -58,11 +69,13 @@ class Book:
         query = "INSERT INTO books ( title , num_of_pages , created_at, updated_at ) VALUES ( %(title)s , %(num_of_pages)s , NOW() , NOW() );"
         return connectToMySQL('books_schema').query_db(query, data)
 
+
     # ---------- Update Book -----------
     @classmethod
     def update_book(cls, data):
         query = "UPDATE books SET updated_at = NOW() WHERE id = %(id)s;"
         return connectToMySQL('books_schema').query_db(query, data)
+
 
     # ---------- Delete Book -----------
     @classmethod
