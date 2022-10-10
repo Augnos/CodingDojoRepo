@@ -2,56 +2,64 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <!-- My CSS -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body class="">
-  <form action="/survey" method="post" class="container w-50 my-3 p-4 border bg-light rounded border-dark">
+    <form action="/insert/survey" method="post" class="container w-50 my-3 p-4 border bg-light rounded border-dark">
 
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">Your Name:</span>
-      <input name="survey_name" type="text" class="form-control" placeholder="" aria-label="name"
-        aria-describedby="basic-addon1">
-    </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Your Name:</span>
+            <input name="name" type="text" class="form-control" placeholder="" aria-label="name"
+                aria-describedby="basic-addon1">
+        </div>
 
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon2">Dojo Location:</span>
-      <select name="survey_location" class="form-control" aria-label=".form-select-lg example">
-        <option selected></option>
-        <option value="Chicago">Chicago</option>
-        <option value="Bellevue">Bellevue</option>
-        <option value="San Jose">San Jose</option>
-        <option value="Burbank">Burbank</option>
-        <option value="Online">Online</option>
-      </select>
-    </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Dojo Location:</span>
+            <select name="location" class="form-control" aria-label=".form-select-lg example">
+                <option selected></option>
+                <option value="Chicago">Chicago</option>
+                <option value="Bellevue">Bellevue</option>
+                <option value="San Jose">San Jose</option>
+                <option value="Burbank">Burbank</option>
+                <option value="Online">Online</option>
+            </select>
+        </div>
 
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon2">Favorite Language:</span>
-      <select name="survey_language" class="form-control" aria-label=".form-select-lg example">
-        <option selected></option>
-        <option value="Python">Python</option>
-        <option value="JavaScript">JavaScript</option>
-        <option value="Java">Java</option>
-      </select>
-    </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Favorite Language:</span>
+            <select name="language" class="form-control" aria-label=".form-select-lg example">
+                <option selected></option>
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Java">Java</option>
+            </select>
+        </div>
 
-    <div class="input-group mb-3">
-      <span class="input-group-text">Comments:</span>
-      <textarea name="survey_comments" class="form-control" aria-label="With textarea"></textarea>
-    </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Comment:</span>
+            <textarea name="comment" class="form-control" aria-label="With textarea"></textarea>
+        </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
 
-  </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </form>
+
 </body>
 
 </html>

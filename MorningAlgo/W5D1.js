@@ -73,12 +73,22 @@ function balance (nums) {
         rightBalance += nums[i];
     }
 
+    balancesFound = false;
+    balances = [];
+
     for (i=0; i < nums.length; i++) {
         rightBalance -= nums[i];
-        if (leftBalance == rightBalance) return(i);
+        
+        if (leftBalance == rightBalance){
+            balancesFound = true;
+            balances.push(i);
+        }
+        
         leftBalance += nums[i];
     }
-    return(-1);
+
+    if (balancesFound == false) return(-1);
+    return (balances);
 }
 
 console.log(balance(nums5));
