@@ -23,7 +23,7 @@ def models():
 # ---------- Models (one) Page -----------
 @app.route("/models/<id>")
 def models_one(id):
-    return render_template("show_model.html", model = Model.get_one({"id":id})
+    return render_template("show_model.html", model = Model.get_one({"id":id}))
 
 
 # ------------------------------------------------------
