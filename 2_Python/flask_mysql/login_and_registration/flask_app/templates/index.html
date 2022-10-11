@@ -45,7 +45,7 @@
                 </form>
             </div>
             <div class="col">
-                <form action="/login" class="bg-dark text-white p-3">
+                <form action="/login" method="post" class="bg-dark text-white p-3">
                     <h2 class="text-success">Login</h2>
                     <div class="mb-3 my-3">
                         <label for="email" class="form-label">Email</label>
@@ -59,15 +59,13 @@
                 </form>
             </div>
         </div>
-        <div class="row">
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for message in messages %}
-                        <p>{{message}}</p>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-        </div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row text-danger">{{message}}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
     </div>
 </body>
 

@@ -3,11 +3,11 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app import app
 
 from flask_bcrypt import Bcrypt
-bcrypt = Bcrypt(app)    # we are creating an object called bcrypt, 
-                        # which is made by invoking the function Bcrypt with our app as an argument
+bcrypt = Bcrypt(app)
 
 import re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
+NAME_REGEX = re.compile(r'^[a-zA-Z]+$') 
 
 
 class User:
@@ -21,15 +21,15 @@ class User:
         self.updated_at = data['updated_at']
 
 
-    # # ---------- Select All Users -----------
-    # @classmethod
-    # def select_all_users(cls):
-    #     query = "SELECT * FROM users;"
-    #     results = connectToMySQL('login_and_registration').query_db(query)
-    #     users = []
-    #     for user in results:
-    #         users.append(cls(user))
-    #     return users
+    # ---------- Select Loggedin User -----------
+    @classmethod
+    def get_by_email(cls,data):
+        query = "SELECT * FROM users WHERE email = %(email)s;"
+        result = connectToMySQL("login_and_registration").query_db(query,data)
+        # Didn't find a matching user
+        if len(result) < 1:
+            return False
+        return cls(result[0])
 
 
     # # ---------- Select Most Recent User -----------
@@ -69,53 +69,66 @@ class User:
     @staticmethod
     def reg_validation(registration):
         is_valid = True
-        
+
         if len(registration["first_name"]) < 2:
             is_valid = False
-            flash("First name must be letters only, at least 2 characters.")
-        
+            flash("First name must be at least 2 characters.")
+
+        if not NAME_REGEX.match(registration['first_name']):
+            is_valid = False
+            flash("First name must only contain characters A-Z.")
+
         if len(registration["last_name"]) < 2:
             is_valid = False
             flash("Last name must be letters only, at least 2 characters.")
-        
-        if not EMAIL_REGEX.match(registration['email']):
-            flash("Invalid email address")
+
+        if not NAME_REGEX.match(registration['last_name']):
             is_valid = False
-        
+            flash("Last name must only contain characters A-Z.")
+
+        query = "SELECT email FROM users WHERE email = %(email)s;"
+        if connectToMySQL('login_and_registration').query_db(query, registration):
+            is_valid = False
+            flash("An account with this email was already created. Login to continue.")
+
+        if not EMAIL_REGEX.match(registration['email']):
+            is_valid = False
+            flash("Invalid email address.")
+
         if len(registration["password"] or registration["confirm_password"]) < 8:
             is_valid = False
             flash("Password must be at least 8 characters.")
-        
+
         if registration["confirm_password"] != registration["password"]:
             is_valid = False
             flash("Passwords do not match.")
-        
+
         return is_valid
 
 
     # ---------- Login Validation -----------
     @staticmethod
     def login_validation(login):
-        is_valid = True
-        
-        if len(login.first_name) < 2:
-            is_valid = False
-            flash("First name must be letters only, at least 2 characters.")
-        
-        if len(login.last_name) < 2:
-            is_valid = False
-            flash("Last name must be letters only, at least 2 characters.")
-        
+
         if not EMAIL_REGEX.match(login['email']):
-            flash("Invalid email address")
+            flash("Invalid login email format.")
+            print("Invalid email.")
+            return False
+
+        if not login["password"]:
+            flash("Login password cannot be empty.")
+            print("Empty login.")
+            return False
+
+        query = "SELECT email FROM users WHERE email = %(email)s;"
+        if not connectToMySQL('login_and_registration').query_db(query, login):
+            flash("This email doesn't seem to be registered. Try another email or create an account.")
+            print("Unregistered email.")
+            return False
+
+        query = "SELECT password FROM users WHERE email = %(email)s;"
+        user_in_db = connectToMySQL('login_and_registration').query_db(query, login)
+        if not bcrypt.check_password_hash(user_in_db.password, login["password"]):
+            flash("Incorrect password. Try again.")
+            print("Incorrect password.")
             is_valid = False
-        
-        if len(login.password or login.confirm_password) < 8:
-            is_valid = False
-            flash("Password must be at least 8 characters.")
-        
-        if login.confirm_password != login.password:
-            is_valid = False
-            flash("Passwords do not match.")
-        
-        return is_valid
