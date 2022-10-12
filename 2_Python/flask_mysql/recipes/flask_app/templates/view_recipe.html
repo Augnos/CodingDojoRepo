@@ -14,17 +14,45 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-auto me-auto">
-                <h1>Welcome, {{ user.first_name }}</h1>
-            </div>
-            <div class="col-auto">
-                <a href="/recipes">back to recipes</a>
+    {% for recipe in recipe %}
+    <div class="container pt-3">
+        <div class="row justify-content-between">
+            <h1 class="text-center col-auto">Welcome {{ user.first_name }}</h1>
+            <div class="col-auto ">
+                <a href="/recipes" class="px-3">back to recipes</a>
                 <a class="btn btn-primary" href="/logout" role="button">Logout</a>
             </div>
         </div>
+        <div class="row justify-content-between">
+            <h1 class="text-center col-auto">{{recipe.name}}</h1>
+            <h2 class="col-auto ">Posted by {{ recipe.first_name }} </h2>
+        </div>
+        <div class="row">
+            <div class="col-12 border">
+                <div class="row">
+                    <p class="col-4">Description:</p>
+                    <p class="col-8">{{ recipe.description }}</p>
+                </div>
+                <div class="row">
+                    <p class="col-4">Under 30 minutes?</p>
+                    <p class="col-8">
+                        {% if recipe.under_30 == 1 %}Yes
+                        {% elif recipe.under_30 == 0 %}No
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="row">
+                    <p class="col-4">Instructions:</p>
+                    <p class="col-8">{{ recipe.instructions }}</p>
+                </div>
+                <div class="row">
+                    <p class="col-4">Date made:</p>
+                    <p class="col-8">{{ recipe.date_made }}</p>
+                </div>
+            </div>
+        </div>
     </div>
+    {% endfor %}
 
 
 

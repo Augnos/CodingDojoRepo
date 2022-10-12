@@ -1,4 +1,4 @@
-from flask import flash
+from flask import flash, session
 from flask_app.config.mysqlconnection import connectToMySQL
 
 
@@ -21,7 +21,7 @@ class Recipe:
     # ---------- Select All Recipes -----------
     @classmethod
     def select_all_recipes(cls):
-        query = "SELECT recipes.id, recipes.name, recipes.description, recipes.under_30, recipes.instructions, recipes.date_made, recipes.user_id, recipes.created_at, recipes.updated_at, users.first_name, users.last_name last_name FROM users LEFT JOIN recipes ON users.id = recipes.user_id"
+        query = "SELECT * FROM recipes JOIN users ON users.id = recipes.user_id"
         results = connectToMySQL('recipes_schema').query_db(query)
         print(results)
         recipes = []
@@ -33,8 +33,9 @@ class Recipe:
     # ---------- Select One Recipe -----------
     @classmethod
     def select_one_recipe(cls, data):
-        query = "SELECT * FROM recipes WHERE id = %(id)s;"
+        query = "SELECT * FROM recipes JOIN users ON users.id = recipes.user_id WHERE recipes.id = %(id)s;"
         results = connectToMySQL('recipes_schema').query_db(query, data)
+        print(results)
         recipes = []
         for recipe in results:
             recipes.append(cls(recipe))
@@ -44,14 +45,14 @@ class Recipe:
     # ---------- Insert New Recipe -----------
     @classmethod
     def insert_recipe(cls, data):
-        query = "INSERT INTO recipes ( created_at, updated_at ) VALUES ( NOW() , NOW() );"
+        query = "INSERT INTO recipes ( name, user_id, description, instructions, date_made, under_30, created_at, updated_at ) VALUES (%(name)s, %(user_id)s, %(description)s, %(instructions)s, %(date_made)s, %(under_30)s, NOW(), NOW() );"
         return connectToMySQL('recipes_schema').query_db(query, data)
 
 
     # ---------- Update Recipe -----------
     @classmethod
     def update_recipe(cls, data):
-        query = "UPDATE recipes SET updated_at = NOW() WHERE id = %(id)s;"
+        query = "UPDATE recipes SET name = %(name)s, description = %(description)s, instructions = %(instructions)s, date_made = %(date_made)s, under_30 = %(under_30)s, updated_at = NOW() WHERE id = %(id)s;"
         return connectToMySQL('recipes_schema').query_db(query, data)
 
 
@@ -62,11 +63,40 @@ class Recipe:
         return connectToMySQL('recipes_schema').query_db(query, data)
 
 
-    # ---------- Validation -----------
+    # ---------- Delete Recipe Validation -----------
+    @classmethod
+    def delete_recipe(cls, data):
+        query = "DELETE FROM recipes WHERE id = %(id)s;"
+        return connectToMySQL('recipes_schema').query_db(query, data)
+
+
+    # ---------- New Recipe Validation -----------
     @staticmethod
-    def is_valid(survey):
+    def recipe_valid(recipe):
         is_valid = True
-        if survey == False:
+        
+        if  len(recipe["name"]) < 3:
             is_valid = False
-            flash("Survey must be true!")
+            flash("Name must contain at least 3 characters.")
+        
+        if  len(recipe["description"]) < 3:
+            is_valid = False
+            flash("Description must contain at least 3 characters.")
+        
+        if  len(recipe["instructions"]) < 3:
+            is_valid = False
+            flash("Instructions must contain at least 3 characters.")
+        
+        if not recipe["date_made"]:
+            is_valid = False
+            flash("Date cooked/made cannot be empty.")
+        
+        if not recipe["under_30"]:
+            is_valid = False
+            flash('"Under 30 minutes" needs to be selected Yes or No.')
+        
+        if  not session["user_id"]:
+            is_valid = False
+            flash("You must be logged in to create/edit a recipe.")
+        
         return is_valid
