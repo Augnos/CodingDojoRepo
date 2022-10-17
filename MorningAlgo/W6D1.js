@@ -34,7 +34,7 @@ console.log(sigma(num3));
 Recursively sum an arr of ints
 */
 
-const nums1 = [1, 2, 3];
+const nums1 = [1, 2, 3, 4, 5];
 // const expected1 = 6;
 
 const nums2 = [1];
@@ -47,8 +47,7 @@ function sigmaArr(nums) {
     if (nums.length < 1) return 0;
     if (nums.length == 1) return (nums[0]);
 
-    base = nums[0];
-    nums.shift();
+    base = nums.shift();
     return (base + sigmaArr(nums));
 }
 
