@@ -53,30 +53,49 @@ map1 = [
 ];
 
 
-function floodIndicator(map, xVal, yVal, height) {
-    floodMap.push({x: xVal, y: yVal});
-    console.log(floodMap);
-    return floodRecursion(map, x, y, height, floodMap)
-}
+function floodIndicator(map, x, y, height) {
+    // floodMap = []
+    // for (x in map){
+    //     floodMap[x] = map[x];
+    //     console.log(floodMap[x])
+    // }
 
-function floodRecursion(map, x, y, height, floodMap) {
-    if (map[x][y] <= height) floodMap[x][y] = "flooded";
     console.log("map at " + x + ", " + y + ": " + map[x][y]);
-    console.log("floodMap at " + x + ", " + y + ": " + floodMap[x][y]);
+    if (map[x][y] <= height) map[x][y] = "flooded";
+    console.log("map at " + x + ", " + y + ": " + map[x][y]);
+    // console.log("floodMap at " + x + ", " + y + ": " + floodMap[x][y]);
 
     // base case
     if (
-        (map[x + 1][y] > height || floodMap[x + 1][y] == "flooded") &&
-        (map[x - 1][y] > height || floodMap[x - 1][y] == "flooded") &&
-        (map[x][y + 1] > height || floodMap[x][y + 1] == "flooded") &&
-        (map[x][y - 1] > height || floodMap[x][y - 1] == "flooded")
-    ) return floodMap;
+        (map[x + 1][y] > height || map[x + 1][y] == "flooded" || map[x + 1][y] == undefined) &&
+        (map[x - 1][y] > height || map[x - 1][y] == "flooded" || map[x - 1][y] == undefined) &&
+        (map[x][y + 1] > height || map[x][y + 1] == "flooded" || map[x][y + 1] == undefined) &&
+        (map[x][y - 1] > height || map[x][y - 1] == "flooded" || map[x][y - 1] == undefined)
+    ) {
+        console.log("Nowhere else for flood to move");
+        for (x in map) {
+            console.log(map[x]);
+            return "Flood Test Completed"
+        };
+    }
 
     // return case
-    if (map[x + 1][y] < height) return floodIndicator(map, (x + 1), y, height);
-    if (map[x - 1][y] < height) return floodIndicator(map, (x - 1), y, height);
-    if (map[x][y + 1] < height) return floodIndicator(map, x, (y + 1), height);
-    if (map[x][y - 1] < height) return floodIndicator(map, x, (y - 1), height);
+    if (map[x + 1][y] < height) {
+        console.log("Flood moving right");
+        return floodIndicator(map, (x + 1), y, height);
+    }
+    if (map[x - 1][y] < height) {
+        console.log("Flood moving left");
+        return floodIndicator(map, (x - 1), y, height);
+    }
+    if (map[x][y + 1] < height) {
+        console.log("Flood moving up");
+        return floodIndicator(map, x, (y + 1), height);
+    }
+    if (map[x][y - 1] < height) {
+        console.log("Flood moving down");
+        return floodIndicator(map, x, (y - 1), height);
+    }
 }
 
-console.log(floodIndicator(map1, 2, 2, 2));
+console.log(floodIndicator(map1, 2, 2, 9));
