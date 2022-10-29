@@ -35,12 +35,20 @@ function fibonacci(n) {
 }
 
 
-console.log(fibonacci(num1));
-console.log(fibonacci(num2));
-console.log(fibonacci(num3));
-console.log(fibonacci(num4));
-console.log(fibonacci(num5));
-console.log(fibonacci(num6));
+// console.log(fibonacci(1));
+// console.log(fibonacci(2));
+// console.log(fibonacci(3));
+// console.log(fibonacci(4));
+// console.log(fibonacci(5));
+// console.log(fibonacci(6));
+// console.log(fibonacci(7));
+// console.log(fibonacci(8));
+// console.log(fibonacci(50));
+// console.log(fibonacci(num2));
+// console.log(fibonacci(num3));
+// console.log(fibonacci(num4));
+// console.log(fibonacci(num5));
+// console.log(fibonacci(num6));
 
 // Fibonacci using memoization
 function fiboMem(n) {
@@ -65,3 +73,4 @@ console.log(fiboMem(num3));
 console.log(fiboMem(num4));
 console.log(fiboMem(num5));
 console.log(fiboMem(num6));
+console.log(fiboMem(5000));
