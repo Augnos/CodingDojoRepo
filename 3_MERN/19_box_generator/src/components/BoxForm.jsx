@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BoxDisplay from "./BoxDisplay";
 
 
-const BoxForm = (props) => {
+const BoxForm = () => {
     // Defining state variables
     const [color, setColor] = useState("");
     const [size, setSize] = useState(200);

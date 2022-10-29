@@ -23,8 +23,6 @@ const BoxDisplay = (props) => {
                             margin: "1rem",
                         }}>
                             <p>{box.color}</p>
-
-
                         </div>
                     )
 
