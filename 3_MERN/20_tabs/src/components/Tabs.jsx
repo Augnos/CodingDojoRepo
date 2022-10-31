@@ -5,6 +5,11 @@ const Tabs = (props) => {
     const { tabs } = props;
     const [clicked, setClicked] = useState(0);
 
+    const clickHandler = (index) => {
+        setClicked(index);
+    }
+
+
     return (
         <div className="container pt-3">
 
@@ -14,7 +19,12 @@ const Tabs = (props) => {
                     tabs.map(
                         (element, index) => {
                             return (
-                                <button onClick={() => setClicked(index)} className="col mx-3" value={element.label}>{element.label}</button>
+                                <button onClick={() => clickHandler(index)}
+                                    className="col mx-3"
+                                    value={element.label}
+                                    >
+                                        {element.label}
+                                    </button>
                             )
                         }
                     )
