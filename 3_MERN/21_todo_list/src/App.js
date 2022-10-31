@@ -8,29 +8,30 @@ function App() {
     const [todoList, setTodoList] = useState([]);
 
 
+    // Handler function for creating new todos
     const newTodoHandler = e => {
         e.preventDefault();
 
+        // Will return nothing if input is empty
         if (newTodo.length < 1) return;
 
         const todoItem = {
             text: newTodo,
             complete: false,
         }
+
+        // New item is pushed to todoList
         setTodoList([...todoList, todoItem]);
+
+        // Input box is reset to an empty value
         setNewTodo("");
     };
 
 
+    // Handler function for todo.complete, based on checkbox value
     const checkboxHandler = index => {
         const updatedTodos = todoList.map((todo, i) => {
-            if (index === i) {
-                todo.complete = !todo.complete;
-
-                // const updatedTodos = {... todoList, complete: !todo.complete };
-                // return updatedTodos;
-            }
-
+            if (index === i) todo.complete = !todo.complete;
             return todo;
         })
 
@@ -38,6 +39,7 @@ function App() {
     }
 
 
+    // Handler function for deleting todos
     const deleteTodo = index => {
         const filteredTodos = todoList.filter((_todo, i) => {
             return i !== index;
