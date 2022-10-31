@@ -1,17 +1,18 @@
 import Tabs from './components/Tabs';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 
-const tabProps = [
-  {tabID: 0, label: "Tab 1", content: "This is tab 1's content."},
-  {tabID: 1, label: "Tab 2", content: "This is tab 2's content."},
-  {tabID: 2, label: "Tab 3", content: "This is tab 3's content."},
+const tabs = [
+  {label: "Tab 1", content: "This is tab 1's content."},
+  {label: "Tab 2", content: "This is tab 2's content."},
+  {label: "Tab 3", content: "This is tab 3's content."},
+  {label: "Tab 4", content: "This is tab 4's content."},
+  {label: "Tab 5", content: "This is tab 5's content."},
 ]
 
 function App() {
   return (
     <div className="App">
-      <Tabs tabProps={tabProps} />
+      <Tabs tabs={tabs} />
     </div>
   );
 }

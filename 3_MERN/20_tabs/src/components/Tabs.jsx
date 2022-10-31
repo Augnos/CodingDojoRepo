@@ -2,12 +2,8 @@ import React, { useState } from "react";
 
 const Tabs = (props) => {
     // destructuring the individual tab objects
-    const { tabProps } = props;
+    const { tabs } = props;
     const [clicked, setClicked] = useState(0);
-
-    tabClickHandler = (e, value) => {
-        setClicked(tabID);
-    }
 
     return (
         <div className="container pt-3">
@@ -15,10 +11,10 @@ const Tabs = (props) => {
             {/* generates tab buttons with labels */}
             <div className="row w-50 mx-auto justify-content-evenly pb-3">
                 {
-                    tabProps.map(
-                        tab => {
+                    tabs.map(
+                        (element, index) => {
                             return (
-                                <button className="col mx-3" onClick={tabClickHandler(tabID)}>{tab.label}</button>
+                                <button onClick={() => setClicked(index)} className="col mx-3" value={element.label}>{element.label}</button>
                             )
                         }
                     )
@@ -27,21 +23,13 @@ const Tabs = (props) => {
 
             {/* generates textarea box with tab's content */}
             <div className="row w-50 mx-auto">
-                {
-                    tabProps.map(
-                        tab => {
-                            return (
-                                <textarea>{tab.content}</textarea>
-                            )
-                        }
-                    )
-                }
+                    <textarea
+                        type="text"
+                        value={tabs[clicked].content}
+                        className="text-primary"></textarea>
             </div>
         </div>
     )
-
-
-
 }
 
 export default Tabs;
