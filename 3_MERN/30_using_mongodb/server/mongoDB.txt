@@ -1,0 +1,1045 @@
+// server           holds all server related files
+    // controllers  holds all logic for each model (i.e creating, updating, etc...)
+    // models       holds all the schemas
+    // routes       handles all of our routes for each model
+    // server.js    handles all the server logic with express
+
+
+    > 1 | db.students.find({lucky_number, this.lucky_number>3})
+    |                                 ^
+  2 |
+
+my_first_db> db.students.find({lucky_number: this.lucky_number>3})
+
+my_first_db> db.students.find({lucky_number: >3}
+Uncaught:
+SyntaxError: Unexpected token (1:32)
+
+> 1 | db.students.find({lucky_number: >3}
+    |                                 ^
+  2 |
+
+my_first_db> db.students.find({lucky_number: this>3}
+... 
+... db.students.find({lucky_number: this>3}
+Uncaught:
+SyntaxError: Unexpected token, expected "," (3:0)
+
+  1 | db.students.find({lucky_number: this>3}
+  2 |
+> 3 | db.students.find({lucky_number: this>3}
+    | ^
+  4 |
+
+my_first_db> db.students.find({lucky_number: {$gt: 3}})
+[
+  {
+    _id: ObjectId("6365927be343df7c34260cee"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("636592cfe343df7c34260cf2"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 }
+  }
+]
+my_first_db> db.students.find({lucky_number: {$lte: 10}})
+[
+  {
+    _id: ObjectId("636592cce343df7c34260cef"),
+    name: 'Jacob',
+    home_state: 'California',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf0"),
+    name: 'Celeste',
+    home_state: 'California',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf1"),
+    name: 'Gabby',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("636592cfe343df7c34260cf2"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 }
+  }
+]
+my_first_db> db.students.find(
+...     {$and: [
+...         lucky_number: {$gte: 1},
+Uncaught:
+SyntaxError: Unexpected token, expected "," (3:20)
+
+  1 | db.students.find(
+  2 |     {$and: [
+> 3 |         lucky_number: {$gte: 1},
+    |                     ^
+  4 |
+
+my_first_db>         lucky_number: {$lte: 9},
+Uncaught:
+SyntaxError: Unexpected token (1:31)
+
+> 1 |         lucky_number: {$lte: 9},
+    |                                ^
+  2 |
+
+my_first_db>     ]}
+Uncaught:
+SyntaxError: Unexpected token (1:4)
+
+> 1 |     ]}
+    |     ^
+  2 |
+
+my_first_db> )db.students.find({$and: [lucky_number: {$gte: 1},lucky_number: {$lte: 9},]})
+Uncaught:
+SyntaxError: Unexpected token (1:0)
+
+> 1 | )db.students.find({$and: [lucky_number: {$gte: 1},lucky_number: {$lte: 9},]})
+    | ^
+  2 |
+
+my_first_db> db.students.find({$and: [lucky_number: {$gte: 1},lucky_number: {$lte: 9},]})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:37)
+
+> 1 | db.students.find({$and: [lucky_number: {$gte: 1},lucky_number: {$lte: 9},]})
+    |                                      ^
+  2 |
+
+my_first_db> db.students.find({$and: [{lucky_number: {$gte: 1}},{lucky_number: {$lte: 9}}]})
+[
+  {
+    _id: ObjectId("636592cce343df7c34260cef"),
+    name: 'Jacob',
+    home_state: 'California',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf0"),
+    name: 'Celeste',
+    home_state: 'California',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf1"),
+    name: 'Gabby',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("636592cfe343df7c34260cf2"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 }
+  }
+]
+my_first_db> db.students.update({}, {$set: {interests: ["coding", "brunch", "MongoDB"]}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+my_first_db> db.students.findall()
+TypeError: db.students.findall is not a function
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365927be343df7c34260cee"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cef"),
+    name: 'Jacob',
+    home_state: 'California',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf0"),
+    name: 'Celeste',
+    home_state: 'California',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf1"),
+    name: 'Gabby',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("636592cfe343df7c34260cf2"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 }
+  }
+]
+my_first_db> db.students.updateMany(
+... {},
+... {$set: {interests: ["coding", "brunch", "MongoDB"]} }
+... )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 4,
+  upsertedCount: 0
+}
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365927be343df7c34260cee"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cef"),
+    name: 'Jacob',
+    home_state: 'California',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf0"),
+    name: 'Celeste',
+    home_state: 'California',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf1"),
+    name: 'Gabby',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cfe343df7c34260cf2"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+my_first_db> db.students.updateOne(
+... 
+... 
+... )
+MongoshInvalidInputError: [COMMON-10001] Missing required argument at position 0 (Collection.updateOne)
+my_first_db> db.students.updateOne({name: "Josh"}, {$push: {interests: ["photography"]}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365927be343df7c34260cee"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', [ 'photography' ] ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cef"),
+    name: 'Jacob',
+    home_state: 'California',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf0"),
+    name: 'Celeste',
+    home_state: 'California',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf1"),
+    name: 'Gabby',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cfe343df7c34260cf2"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+my_first_db> db.students.updateOne({name: "Josh"}, {$pop: {interests: (1) }})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365927be343df7c34260cee"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cef"),
+    name: 'Jacob',
+    home_state: 'California',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf0"),
+    name: 'Celeste',
+    home_state: 'California',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf1"),
+    name: 'Gabby',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cfe343df7c34260cf2"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+my_first_db> db.students.updateOne({name: "Josh"}, {$push: {interests: "photography"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365927be343df7c34260cee"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'photography' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cef"),
+    name: 'Jacob',
+    home_state: 'California',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf0"),
+    name: 'Celeste',
+    home_state: 'California',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf1"),
+    name: 'Gabby',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cfe343df7c34260cf2"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+my_first_db> db.students.updateOne({name: "Jacob"}, {$push: {interests: "cars"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365927be343df7c34260cee"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'photography' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cef"),
+    name: 'Jacob',
+    home_state: 'California',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'cars' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf0"),
+    name: 'Celeste',
+    home_state: 'California',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf1"),
+    name: 'Gabby',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cfe343df7c34260cf2"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+my_first_db> db.students.updateOne({name: "Gabby"}, {$push: {interests: "cats"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365927be343df7c34260cee"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'photography' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cef"),
+    name: 'Jacob',
+    home_state: 'California',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'cars' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf0"),
+    name: 'Celeste',
+    home_state: 'California',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf1"),
+    name: 'Gabby',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'cats' ]
+  },
+  {
+    _id: ObjectId("636592cfe343df7c34260cf2"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+my_first_db> db.students.updateOne({name: "Celeste"}, {$push: {interests: "taxes"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365927be343df7c34260cee"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'photography' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cef"),
+    name: 'Jacob',
+    home_state: 'California',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'cars' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf0"),
+    name: 'Celeste',
+    home_state: 'California',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'taxes' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf1"),
+    name: 'Gabby',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'cats' ]
+  },
+  {
+    _id: ObjectId("636592cfe343df7c34260cf2"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+my_first_db> db.students.updateOne({name: "Celeste"}, {$pop: {interests: (1)}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365927be343df7c34260cee"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'photography' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cef"),
+    name: 'Jacob',
+    home_state: 'California',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'cars' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf0"),
+    name: 'Celeste',
+    home_state: 'California',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf1"),
+    name: 'Gabby',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'cats' ]
+  },
+  {
+    _id: ObjectId("636592cfe343df7c34260cf2"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+my_first_db> db.students.remove({name: "Mathew"})
+DeprecationWarning: Collection.remove() is deprecated. Use deleteOne, deleteMany, findOneAndDelete, or bulkWrite.
+{ acknowledged: true, deletedCount: 1 }
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365927be343df7c34260cee"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'photography' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cef"),
+    name: 'Jacob',
+    home_state: 'California',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'cars' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf0"),
+    name: 'Celeste',
+    home_state: 'California',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf1"),
+    name: 'Gabby',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'cats' ]
+  }
+]
+my_first_db> db.students.deleteOne({lucky_number: {$gt: 5}})
+{ acknowledged: true, deletedCount: 1 }
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("636592cce343df7c34260cef"),
+    name: 'Jacob',
+    home_state: 'California',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'cars' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf0"),
+    name: 'Celeste',
+    home_state: 'California',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf1"),
+    name: 'Gabby',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'cats' ]
+  }
+]
+my_first_db> db.students.deleteOne({lucky_number: {$lt: 3}})
+{ acknowledged: true, deletedCount: 1 }
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("636592cce343df7c34260cf0"),
+    name: 'Celeste',
+    home_state: 'California',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId("636592cce343df7c34260cf1"),
+    name: 'Gabby',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'cats' ]
+  }
+]
+my_first_db> db.students.deleteMany({home_state: "California"})
+{ acknowledged: true, deletedCount: 2 }
+my_first_db> db.students.find()
+
+my_first_db> db.students.insert({name: "Josh", home_state: "California", lucky_number: 13, birthday: {month: 1, day: 1, year: 1}})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6365a093e343df7c34260cf3") }
+}
+my_first_db> db.students.insert({name: "Jacob", home_state: "Florida", lucky_number: 1, birthday: {month: 1, day: 1, year: 1}})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6365a093e343df7c34260cf4") }
+}
+my_first_db> db.students.insert({name: "Celeste", home_state: "Georgia", lucky_number: 2, birthday: {month: 1, day: 1, year: 1}})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6365a093e343df7c34260cf5") }
+}
+my_first_db> db.students.insert({name: "Gabby", home_state: "Georgia", lucky_number: 3, birthday: {month: 1, day: 1, year: 1}})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6365a094e343df7c34260cf6") }
+}
+my_first_db> db.students.insert({name: "Mathew", home_state: "California", lucky_number: 4, birthday: {month: 1, day: 1, year: 1}})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6365a094e343df7c34260cf7") }
+}
+my_first_db> db.students.insert({name: "Andrew", home_state: "California", lucky_number: 4, birthday: {month: 1, day: 1, year: 1}})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6365a095e343df7c34260cf8") }
+}
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365a093e343df7c34260cf3"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("6365a093e343df7c34260cf4"),
+    name: 'Jacob',
+    home_state: 'Florida',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("6365a093e343df7c34260cf5"),
+    name: 'Celeste',
+    home_state: 'Georgia',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("6365a094e343df7c34260cf6"),
+    name: 'Gabby',
+    home_state: 'Georgia',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("6365a094e343df7c34260cf7"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("6365a095e343df7c34260cf8"),
+    name: 'Andrew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 }
+  }
+]
+my_first_db> db.students.updateOne({name: "Andrew"}, {lucky_number: 7})
+MongoInvalidArgumentError: Update document requires atomic operators
+my_first_db> db.students.updateOne({name: "Andrew"}, {$set {lucky_number: 7}})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:46)
+
+> 1 | db.students.updateOne({name: "Andrew"}, {$set {lucky_number: 7}})
+    |                                               ^
+  2 |
+
+my_first_db> db.students.updateOne({name: "Andrew"}, {$set: {lucky_number: 7}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365a093e343df7c34260cf3"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("6365a093e343df7c34260cf4"),
+    name: 'Jacob',
+    home_state: 'Florida',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("6365a093e343df7c34260cf5"),
+    name: 'Celeste',
+    home_state: 'Georgia',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("6365a094e343df7c34260cf6"),
+    name: 'Gabby',
+    home_state: 'Georgia',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("6365a094e343df7c34260cf7"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 }
+  },
+  {
+    _id: ObjectId("6365a095e343df7c34260cf8"),
+    name: 'Andrew',
+    home_state: 'California',
+    lucky_number: 7,
+    birthday: { month: 1, day: 1, year: 1 }
+  }
+]
+my_first_db> db.students.updateMany({}, {$set: {number_of_belts: 0}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 6,
+  modifiedCount: 6,
+  upsertedCount: 0
+}
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365a093e343df7c34260cf3"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("6365a093e343df7c34260cf4"),
+    name: 'Jacob',
+    home_state: 'Florida',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("6365a093e343df7c34260cf5"),
+    name: 'Celeste',
+    home_state: 'Georgia',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("6365a094e343df7c34260cf6"),
+    name: 'Gabby',
+    home_state: 'Georgia',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("6365a094e343df7c34260cf7"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("6365a095e343df7c34260cf8"),
+    name: 'Andrew',
+    home_state: 'California',
+    lucky_number: 7,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  }
+]
+my_first_db> db.students.updateMany({home_state: "California"}, {$set: {number_of_belts: {$add: ["$number_of_belts", 1]} }}
+... )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365a093e343df7c34260cf3"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: { '$add': [ '$number_of_belts', 1 ] }
+  },
+  {
+    _id: ObjectId("6365a093e343df7c34260cf4"),
+    name: 'Jacob',
+    home_state: 'Florida',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("6365a093e343df7c34260cf5"),
+    name: 'Celeste',
+    home_state: 'Georgia',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("6365a094e343df7c34260cf6"),
+    name: 'Gabby',
+    home_state: 'Georgia',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("6365a094e343df7c34260cf7"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: { '$add': [ '$number_of_belts', 1 ] }
+  },
+  {
+    _id: ObjectId("6365a095e343df7c34260cf8"),
+    name: 'Andrew',
+    home_state: 'California',
+    lucky_number: 7,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: { '$add': [ '$number_of_belts', 1 ] }
+  }
+]
+my_first_db> db.students.updateMany({ home_state: "California" }, { number_of_belts: 0 })
+MongoInvalidArgumentError: Update document requires atomic operators
+my_first_db> db.students.updateMany({ home_state: "California" }, {$set:{ number_of_belts: 0} })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+my_first_db> db.students.updateMany({ home_state: "California" }, { number_of_belts: 0 })
+MongoInvalidArgumentError: Update document requires atomic operators
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId("6365a093e343df7c34260cf3"),
+    name: 'Josh',
+    home_state: 'California',
+    lucky_number: 13,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("6365a093e343df7c34260cf4"),
+    name: 'Jacob',
+    home_state: 'Florida',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("6365a093e343df7c34260cf5"),
+    name: 'Celeste',
+    home_state: 'Georgia',
+    lucky_number: 2,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("6365a094e343df7c34260cf6"),
+    name: 'Gabby',
+    home_state: 'Georgia',
+    lucky_number: 3,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("6365a094e343df7c34260cf7"),
+    name: 'Mathew',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  },
+  {
+    _id: ObjectId("6365a095e343df7c34260cf8"),
+    name: 'Andrew',
+    home_state: 'California',
+    lucky_number: 7,
+    birthday: { month: 1, day: 1, year: 1 },
+    number_of_belts: 0
+  }
+]
+my_first_db> db.students.updateMany({ home_state: "California" }, { $add: { number_of_belts: 1 } } })
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:86)
+
+> 1 | db.students.updateMany({ home_state: "California" }, { $add: { number_of_belts: 1 } } })
+    |                                                                                       ^
+  2 |
+
+my_first_db> db.students.updateMany({ home_state: "California" }, { $add: { number_of_belts: 1 } } )
+MongoServerError: Unknown modifier: $add. Expected a valid update modifier or pipeline-style update specified as an array
+my_first_db> db.students.updateMany({ home_state: "California" }, { $add: { number_of_belts: 1 } } )

@@ -21,9 +21,9 @@ function balloons(text, target = "balloon") {
 
     console.log(textMap, tarMap);
     for (char in tarMap) {
-        if (textMap.hasOwnProperty(char))
-            newCount = Math.floor(textMap[char] / tarMap[char]);
-        else return 0;
+        textMap.hasOwnProperty(char)?
+            newCount = Math.floor(textMap[char] / tarMap[char]):
+            newCount = 0;
 
         if (count > newCount)
             count = newCount;
