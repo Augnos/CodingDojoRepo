@@ -44,21 +44,21 @@ const available1 = {
 // Output: 10 IF we had 10 live squids because then we have 10x of every ingredient
 // Output: 0 IF we had 0 live squids or live squids key didn't exist in 'available'
 
-function getMaxServings(recipe, ingredients) {
+function getMaxServings(recipe, available) {
     // initial count is set to infinity
     servings = Infinity;
 
     // for loop checks each ingredient of recipe for how much of that ingredient is available
-    for (key in recipe){
-        console.log(key, ingredients[key] + "/" + recipe[key])
-        
+    for (key in recipe) {
+        console.log(key, available[key] + "/" + recipe[key])
+
         // maxServings declared
         let maxServings;
 
         // if statement checks if that ingredient is even available at all
-        if (ingredients.hasOwnProperty(key)) {
+        if (available.hasOwnProperty(key)) {
             // if so, maxServings is set to the number of times we can make the recipe with what's available
-            maxServings = Math.floor(ingredients[key] / recipe[key]);
+            maxServings = Math.floor(available[key] / recipe[key]);
         } else return 0; // if not, we return 0, and can't make any number of the recipe
 
         // servings is updated to value of maxServings every time the recipe is limited by the available ingredient checked.
@@ -69,3 +69,8 @@ function getMaxServings(recipe, ingredients) {
 }
 
 console.log("Max servings: " + getMaxServings(recipe1, available1));
+
+// one-liner solution
+const getMaxServingsOneLiner = (recipe, available) => Math.min(...Object.entries(recipe).map(([key, value]) => available[key] / value)) || 0;
+
+console.log("Max servings: " + getMaxServingsOneLiner(recipe1, available1));
