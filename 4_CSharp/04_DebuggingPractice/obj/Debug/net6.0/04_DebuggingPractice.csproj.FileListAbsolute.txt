@@ -1,0 +1,15 @@
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/obj/Debug/net6.0/04_DebuggingPractice.csproj.AssemblyReference.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/obj/Debug/net6.0/04_DebuggingPractice.GeneratedMSBuildEditorConfig.editorconfig
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/obj/Debug/net6.0/04_DebuggingPractice.AssemblyInfoInputs.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/obj/Debug/net6.0/04_DebuggingPractice.AssemblyInfo.cs
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/obj/Debug/net6.0/04_DebuggingPractice.csproj.CoreCompileInputs.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/bin/Debug/net6.0/04_DebuggingPractice
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/bin/Debug/net6.0/04_DebuggingPractice.deps.json
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/bin/Debug/net6.0/04_DebuggingPractice.runtimeconfig.json
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/bin/Debug/net6.0/04_DebuggingPractice.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/bin/Debug/net6.0/04_DebuggingPractice.pdb
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/obj/Debug/net6.0/04_DebuggingPractice.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/obj/Debug/net6.0/refint/04_DebuggingPractice.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/obj/Debug/net6.0/04_DebuggingPractice.pdb
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/obj/Debug/net6.0/04_DebuggingPractice.genruntimeconfig.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/04_DebuggingPractice/obj/Debug/net6.0/ref/04_DebuggingPractice.dll
