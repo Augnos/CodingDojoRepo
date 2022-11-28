@@ -1,0 +1,15 @@
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/bin/Debug/net6.0/01_HelloDotnet
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/bin/Debug/net6.0/01_HelloDotnet.deps.json
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/bin/Debug/net6.0/01_HelloDotnet.runtimeconfig.json
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/bin/Debug/net6.0/01_HelloDotnet.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/bin/Debug/net6.0/01_HelloDotnet.pdb
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/obj/Debug/net6.0/01_HelloDotnet.csproj.AssemblyReference.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/obj/Debug/net6.0/01_HelloDotnet.GeneratedMSBuildEditorConfig.editorconfig
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/obj/Debug/net6.0/01_HelloDotnet.AssemblyInfoInputs.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/obj/Debug/net6.0/01_HelloDotnet.AssemblyInfo.cs
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/obj/Debug/net6.0/01_HelloDotnet.csproj.CoreCompileInputs.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/obj/Debug/net6.0/01_HelloDotnet.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/obj/Debug/net6.0/refint/01_HelloDotnet.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/obj/Debug/net6.0/01_HelloDotnet.pdb
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/obj/Debug/net6.0/01_HelloDotnet.genruntimeconfig.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/01_HelloDotnet/obj/Debug/net6.0/ref/01_HelloDotnet.dll
