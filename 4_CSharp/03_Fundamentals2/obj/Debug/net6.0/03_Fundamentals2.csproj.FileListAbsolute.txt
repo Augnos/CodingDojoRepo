@@ -1,0 +1,15 @@
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/bin/Debug/net6.0/03_Fundamentals2
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/bin/Debug/net6.0/03_Fundamentals2.deps.json
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/bin/Debug/net6.0/03_Fundamentals2.runtimeconfig.json
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/bin/Debug/net6.0/03_Fundamentals2.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/bin/Debug/net6.0/03_Fundamentals2.pdb
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/obj/Debug/net6.0/03_Fundamentals2.csproj.AssemblyReference.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/obj/Debug/net6.0/03_Fundamentals2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/obj/Debug/net6.0/03_Fundamentals2.AssemblyInfoInputs.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/obj/Debug/net6.0/03_Fundamentals2.AssemblyInfo.cs
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/obj/Debug/net6.0/03_Fundamentals2.csproj.CoreCompileInputs.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/obj/Debug/net6.0/03_Fundamentals2.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/obj/Debug/net6.0/refint/03_Fundamentals2.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/obj/Debug/net6.0/03_Fundamentals2.pdb
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/obj/Debug/net6.0/03_Fundamentals2.genruntimeconfig.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/03_Fundamentals2/obj/Debug/net6.0/ref/03_Fundamentals2.dll
