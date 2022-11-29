@@ -1,0 +1,15 @@
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/obj/Debug/net6.0/06_Puzzles.csproj.AssemblyReference.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/obj/Debug/net6.0/06_Puzzles.GeneratedMSBuildEditorConfig.editorconfig
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/obj/Debug/net6.0/06_Puzzles.AssemblyInfoInputs.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/obj/Debug/net6.0/06_Puzzles.AssemblyInfo.cs
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/obj/Debug/net6.0/06_Puzzles.csproj.CoreCompileInputs.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/bin/Debug/net6.0/06_Puzzles
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/bin/Debug/net6.0/06_Puzzles.deps.json
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/bin/Debug/net6.0/06_Puzzles.runtimeconfig.json
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/bin/Debug/net6.0/06_Puzzles.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/bin/Debug/net6.0/06_Puzzles.pdb
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/obj/Debug/net6.0/06_Puzzles.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/obj/Debug/net6.0/refint/06_Puzzles.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/obj/Debug/net6.0/06_Puzzles.pdb
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/obj/Debug/net6.0/06_Puzzles.genruntimeconfig.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/06_Puzzles/obj/Debug/net6.0/ref/06_Puzzles.dll
