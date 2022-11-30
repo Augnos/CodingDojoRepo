@@ -1,0 +1,11 @@
+﻿EnemyMelee Melee = new EnemyMelee();
+EnemyRanged Ranged = new EnemyRanged();
+EnemyMagic Magic = new EnemyMagic();
+Melee.RandomAttack();
+Melee.Rage();
+Ranged.RandomAttack();
+Ranged.Dash();
+Ranged.RandomAttack();
+Magic.RandomAttack();
+Magic.Heal(Ranged);
+Magic.Heal(Magic);

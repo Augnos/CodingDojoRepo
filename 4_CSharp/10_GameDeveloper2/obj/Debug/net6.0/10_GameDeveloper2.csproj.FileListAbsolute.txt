@@ -1,0 +1,15 @@
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/bin/Debug/net6.0/10_GameDeveloper2
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/bin/Debug/net6.0/10_GameDeveloper2.deps.json
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/bin/Debug/net6.0/10_GameDeveloper2.runtimeconfig.json
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/bin/Debug/net6.0/10_GameDeveloper2.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/bin/Debug/net6.0/10_GameDeveloper2.pdb
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/obj/Debug/net6.0/10_GameDeveloper2.csproj.AssemblyReference.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/obj/Debug/net6.0/10_GameDeveloper2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/obj/Debug/net6.0/10_GameDeveloper2.AssemblyInfoInputs.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/obj/Debug/net6.0/10_GameDeveloper2.AssemblyInfo.cs
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/obj/Debug/net6.0/10_GameDeveloper2.csproj.CoreCompileInputs.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/obj/Debug/net6.0/10_GameDeveloper2.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/obj/Debug/net6.0/refint/10_GameDeveloper2.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/obj/Debug/net6.0/10_GameDeveloper2.pdb
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/obj/Debug/net6.0/10_GameDeveloper2.genruntimeconfig.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/10_GameDeveloper2/obj/Debug/net6.0/ref/10_GameDeveloper2.dll
