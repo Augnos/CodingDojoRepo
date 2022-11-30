@@ -1,0 +1,15 @@
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/obj/Debug/net6.0/08_GameDeveloper1.csproj.AssemblyReference.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/obj/Debug/net6.0/08_GameDeveloper1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/obj/Debug/net6.0/08_GameDeveloper1.AssemblyInfoInputs.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/obj/Debug/net6.0/08_GameDeveloper1.AssemblyInfo.cs
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/obj/Debug/net6.0/08_GameDeveloper1.csproj.CoreCompileInputs.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/bin/Debug/net6.0/08_GameDeveloper1
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/bin/Debug/net6.0/08_GameDeveloper1.deps.json
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/bin/Debug/net6.0/08_GameDeveloper1.runtimeconfig.json
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/bin/Debug/net6.0/08_GameDeveloper1.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/bin/Debug/net6.0/08_GameDeveloper1.pdb
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/obj/Debug/net6.0/08_GameDeveloper1.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/obj/Debug/net6.0/refint/08_GameDeveloper1.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/obj/Debug/net6.0/08_GameDeveloper1.pdb
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/obj/Debug/net6.0/08_GameDeveloper1.genruntimeconfig.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/08_GameDeveloper1/obj/Debug/net6.0/ref/08_GameDeveloper1.dll
