@@ -1,0 +1,20 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = FirstWeb
+build_property.RootNamespace = FirstWeb
+build_property.ProjectDir = /Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/00_Lectures/W1D3/FirstWeb/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/00_Lectures/W1D3/FirstWeb
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/00_Lectures/W1D3/FirstWeb/Views/Hello/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSGVsbG8vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
