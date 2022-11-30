@@ -1,0 +1,20 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = _14_RazorFun
+build_property.RootNamespace = _14_RazorFun
+build_property.ProjectDir = /Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/14_RazorFun/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/14_RazorFun
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/14_RazorFun/Views/List/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGlzdC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
