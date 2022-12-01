@@ -1,0 +1,28 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = _15_Portfolio2
+build_property.RootNamespace = _15_Portfolio2
+build_property.ProjectDir = /Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/15_Portfolio2/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/15_Portfolio2
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/15_Portfolio2/Views/Hello/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSGVsbG8vQ29udGFjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/15_Portfolio2/Views/Hello/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSGVsbG8vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/15_Portfolio2/Views/Hello/Projects.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSGVsbG8vUHJvamVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

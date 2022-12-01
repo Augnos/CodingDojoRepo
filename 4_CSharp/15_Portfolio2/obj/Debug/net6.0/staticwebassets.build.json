@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "heBgc1N/FoLXZvyBRHoRF7uksBVAgEJYuooL3vsKTQ4=",
+  "Source": "15_Portfolio2",
+  "BasePath": "_content/15_Portfolio2",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "15_Portfolio2/wwwroot",
+      "Source": "15_Portfolio2",
+      "ContentRoot": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/15_Portfolio2/wwwroot/",
+      "BasePath": "_content/15_Portfolio2",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
