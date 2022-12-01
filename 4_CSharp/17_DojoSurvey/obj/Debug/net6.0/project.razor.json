@@ -1,5 +1,5 @@
 {
-  "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/14_RazorFun/14_RazorFun.csproj",
+  "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/17_DojoSurvey/17_DojoSurvey.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -16295,13 +16295,7 @@
     ],
     "CSharpLanguageVersion": 1000
   },
-  "RootNamespace": "_14_RazorFun",
-  "Documents": [
-    {
-      "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/14_RazorFun/Views/List/Index.cshtml",
-      "TargetPath": "Views\\List\\Index.cshtml",
-      "FileKind": "mvc"
-    }
-  ],
+  "RootNamespace": "_17_DojoSurvey",
+  "Documents": [],
   "SerializationFormat": "0.2"
 }
