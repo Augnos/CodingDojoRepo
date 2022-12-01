@@ -16296,6 +16296,12 @@
     "CSharpLanguageVersion": 1000
   },
   "RootNamespace": "_17_DojoSurvey",
-  "Documents": [],
+  "Documents": [
+    {
+      "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/17_DojoSurvey/Views/Survey/Index.cshtml",
+      "TargetPath": "Views\\Survey\\Index.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
   "SerializationFormat": "0.2"
 }
