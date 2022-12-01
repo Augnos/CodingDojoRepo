@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 namespace Portfolio.Controllers;
-public class HelloController : Controller
+public class PortfolioController : Controller
 {
     [HttpGet("")]
     public ViewResult Index()

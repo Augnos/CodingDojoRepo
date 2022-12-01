@@ -1,6 +1,0 @@
-/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/00_Lectures/W1D3/FirstWeb/obj/Debug/net6.0/FirstWeb.csproj.AssemblyReference.cache
-/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/00_Lectures/W1D3/FirstWeb/obj/Debug/net6.0/FirstWeb.GeneratedMSBuildEditorConfig.editorconfig
-/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/00_Lectures/W1D3/FirstWeb/obj/Debug/net6.0/FirstWeb.AssemblyInfoInputs.cache
-/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/00_Lectures/W1D3/FirstWeb/obj/Debug/net6.0/FirstWeb.AssemblyInfo.cs
-/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/00_Lectures/W1D3/FirstWeb/obj/Debug/net6.0/FirstWeb.csproj.CoreCompileInputs.cache
-/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/00_Lectures/W1D3/FirstWeb/obj/Debug/net6.0/FirstWeb.MvcApplicationPartsAssemblyInfo.cache

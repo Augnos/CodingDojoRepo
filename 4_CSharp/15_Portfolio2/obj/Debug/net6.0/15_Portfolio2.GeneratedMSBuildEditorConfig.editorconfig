@@ -15,14 +15,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/15_Portfolio2
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/15_Portfolio2/Views/Hello/Contact.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSGVsbG8vQ29udGFjdC5jc2h0bWw=
+[/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/15_Portfolio2/Views/Portfolio/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUG9ydGZvbGlvL0NvbnRhY3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/15_Portfolio2/Views/Hello/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSGVsbG8vSW5kZXguY3NodG1s
+[/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/15_Portfolio2/Views/Portfolio/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUG9ydGZvbGlvL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/15_Portfolio2/Views/Hello/Projects.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSGVsbG8vUHJvamVjdHMuY3NodG1s
+[/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/15_Portfolio2/Views/Portfolio/Projects.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUG9ydGZvbGlvL1Byb2plY3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
