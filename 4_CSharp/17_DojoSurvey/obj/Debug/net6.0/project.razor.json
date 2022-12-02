@@ -16301,6 +16301,11 @@
       "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/17_DojoSurvey/Views/Survey/Index.cshtml",
       "TargetPath": "Views\\Survey\\Index.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/17_DojoSurvey/Views/Survey/Results.cshtml",
+      "TargetPath": "Views\\Survey\\Results.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"
