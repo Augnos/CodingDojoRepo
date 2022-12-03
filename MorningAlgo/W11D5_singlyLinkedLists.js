@@ -86,7 +86,7 @@ class SinglyLinkedList {
             }
             runner = runner.next;
         }
-        console.log(this.removeVal(minNode.data)); // remove the minimum value...
+        this.removeVal(minNode.data); // remove the minimum value...
         return this.insertAtFront(minNode.data); // ...and insert it at the front.
     }
 
@@ -107,13 +107,15 @@ splitOnVal(val) {
         return this;
     }
 
-    if (this.head.data == val) {
-        return this;
-    }
-
-    let runner = this.head;
     let newList = new SinglyLinkedList();
-
+    
+    if (this.head.data == val) {
+        newList.head = this.head;
+        this.head = null;
+        return newList;
+    }
+    
+    let runner = this.head;
     while (runner.next){
         if (runner.next.data == val){
             newList.head = runner.next;
@@ -518,5 +520,19 @@ const unorderedList = new SinglyLinkedList().insertAtBackMany([
 
 // Print your list like so:
 
-console.log(unorderedList.splitOnVal(6).toArr());
-console.log("new unordered list: " + unorderedList.toArr());
+// console.log(firstThreeList.toArr());
+// console.log(secondThreeList.toArr());
+// console.log('concat lists')
+// console.log(firstThreeList.concat(secondThreeList).toArr());
+
+// console.log('before moveMinToFront');
+// console.log(unorderedList.toArr());
+// console.log('after moveMinToFront');
+// console.log(unorderedList.moveMinToFront().toArr());
+
+console.log('unordered list')
+console.log(unorderedList.toArr());
+console.log('split on val: ')
+console.log(unorderedList.splitOnVal(-5).toArr());
+console.log('new "unordered" list: ');
+console.log(unorderedList.toArr());
