@@ -1,0 +1,36 @@
+@model Form
+@{
+    ViewData["Title"] = "Results";
+}
+
+    <div class="container w-50 my-3 p-4 border bg-light rounded border-dark">
+        <h3 class="row m-3">Submitted Information:</h3>
+
+        <div class="row mb-3">
+            <div class="col">Name:</div>
+            <div class="col">@Model.Name</div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">Email:</div>
+            <div class="col">@Model.Email</div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">Date of Birth:</div>
+            <div class="col">@Model.Birthday.Value.ToShortDateString()</div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">Password:</div>
+            <div class="col">@Model.Password</div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">Favorite Number:</div>
+            <div class="col">@Model.FavNumber</div>
+        </div>
+
+        <a href="/" class="btn btn-primary">Go Back</a>
+
+    </div>
