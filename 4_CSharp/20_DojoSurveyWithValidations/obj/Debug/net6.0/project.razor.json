@@ -1,5 +1,5 @@
 {
-  "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/16_Countdown/16_Countdown.csproj",
+  "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/20_DojoSurveyWithValidations/20_DojoSurveyWithValidations.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -16295,11 +16295,41 @@
     ],
     "CSharpLanguageVersion": 1000
   },
-  "RootNamespace": "_16_Countdown",
+  "RootNamespace": "_20_DojoSurveyWithValidations",
   "Documents": [
     {
-      "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/16_Countdown/Views/Countdown/Index.cshtml",
-      "TargetPath": "Views\\Countdown\\Index.cshtml",
+      "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/20_DojoSurveyWithValidations/Views/Survey/Index.cshtml",
+      "TargetPath": "Views\\Survey\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/20_DojoSurveyWithValidations/Views/Shared/Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/20_DojoSurveyWithValidations/Views/_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/20_DojoSurveyWithValidations/Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/20_DojoSurveyWithValidations/Views/_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/20_DojoSurveyWithValidations/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/20_DojoSurveyWithValidations/Views/Survey/Results.cshtml",
+      "TargetPath": "Views\\Survey\\Results.cshtml",
       "FileKind": "mvc"
     }
   ],
