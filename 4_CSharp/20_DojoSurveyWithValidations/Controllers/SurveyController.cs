@@ -1,27 +1,9 @@
-﻿using System.Diagnostics;
+﻿#pragma warning disable CS8618
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using _20_DojoSurveyWithValidations.Models;
 
 namespace _20_DojoSurveyWithValidations.Controllers;
-
-// public class SurveyController : Controller
-// {
-//     private readonly ILogger<SurveyController> _logger;
-
-//     public SurveyController(ILogger<SurveyController> logger)
-//     {
-//         _logger = logger;
-//     }
-
-//     Survey survey = new Survey();
-
-//     [HttpGet("")]
-//     public IActionResult Index()
-//     {
-//         return View();
-//     }
-
-
 
 public class SurveyController : Controller
 {
