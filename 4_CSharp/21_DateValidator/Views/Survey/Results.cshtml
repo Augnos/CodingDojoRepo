@@ -1,0 +1,39 @@
+@model Survey
+@{
+    ViewData["Title"] = "Results";
+}
+
+    <div class="container w-50 my-3 p-4 border bg-light rounded border-dark">
+        <h3 class="row m-3">Submitted Information:</h3>
+
+        <div class="row mb-3">
+            <div class="col">Name:</div>
+            <div class="col">@Model.Name</div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">Location:</div>
+            <div class="col">@Model.Location </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">Start Date:</div>
+            <div class="col">@Model.StartDate </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">Favorite Language:</div>
+            <div class="col">@Model.Language</div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">Comments:</div>
+            @{
+                if (string.IsNullOrEmpty(Model.Comments)) {<div class="col text-muted">No Comment</div>}
+                else {<div class="col">@Model.Comments</div>};
+            }
+        </div>
+
+        <a href="/" class="btn btn-primary">Go Back</a>
+
+    </div>
