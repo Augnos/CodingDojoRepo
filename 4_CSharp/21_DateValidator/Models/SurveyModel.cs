@@ -11,6 +11,7 @@ public class Survey
     [Required(ErrorMessage ="Dojo Location is required.")]
     public string Location { get; set; }
 
+    [Required(ErrorMessage ="Start Date is required.")]
     [FutureDateAttribute]
     public DateTime? StartDate { get; set; }
 
@@ -26,6 +27,7 @@ public class FutureDateAttribute : ValidationAttribute
     protected override ValidationResult IsValid(object value, ValidationContext validationContext)    
     {        
         if (value == null) return new ValidationResult("Start Date is required.");
+        
 
         TimeSpan timeSpan = (DateTime)value - DateTime.Now;
 
