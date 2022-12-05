@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Dojo Survey";
+}
+
+    <form action="process" method="post" class="container w-50 my-3 p-4 border bg-light rounded border-dark">
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Your Name:</span>
+            <input name="Name" type="text" class="form-control" aria-label="name"
+                aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Dojo Location:</span>
+            <select name="Location" class="form-control" aria-label=".form-select-lg example">
+                <option selected></option>
+                <option value="Chicago">Chicago</option>
+                <option value="Bellevue">Bellevue</option>
+                <option value="San Jose">San Jose</option>
+                <option value="Burbank">Burbank</option>
+                <option value="Online">Online</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Favorite Language:</span>
+            <select name="Language" class="form-control" aria-label=".form-select-lg example">
+                <option selected></option>
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Java">Java</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Comments:</span>
+            <textarea name="Comments" class="form-control" aria-label="With textarea"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
