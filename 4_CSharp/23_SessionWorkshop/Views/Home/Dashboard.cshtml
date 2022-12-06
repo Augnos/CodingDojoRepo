@@ -1,0 +1,31 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<div class="d-flex px-5 vh-100 flex-column justify-content-between">
+    <div class="row nav my-3 border-bottom justify-content-between align-items-center pb-2">
+        <h3 class="col-auto">Welcome, @Context.Session.GetString("UserName")</h3>
+        <a href="Logout" class="col-auto btn btn-danger">Log Out</a>
+    </div>
+
+    <div class="container">
+        <div class="row my-3">
+            <div class="col text-center fs-1">
+                @Context.Session.GetInt32("Number")
+            </div>
+        </div>
+
+            <div class="row my-3">
+                <a href="UpdatePlusOne" class="col btn btn-warning m-3">+1</a>
+                <a href="UpdateMinusOne" class="col btn btn-primary m-3">-1</a>
+            </div>
+            <div class="row my-3">
+                <a href="UpdateTimesTwo" class="col btn btn-danger m-3">x2</a>
+                <a href="UpdatePlusRandom" class="col btn btn-success m-3">+ Random</a>
+            </div>
+    </div>
+
+    <div></div>
+
+
+</div>

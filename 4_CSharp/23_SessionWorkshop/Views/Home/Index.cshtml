@@ -1,0 +1,18 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="container m-auto text-center justify-content-evenly">
+    <div class="my-3">
+        <h1 class="">Welcome</h1>
+        <h3>Please give your name:</h3>
+    </div>
+    <form asp-action="Login" asp-controller="Home" method="post">
+        <div class="input-group mb-3">
+            <label asp-for="Name" class="input-group-text">Name</label>
+            <input asp-for="Name" class="form-control">
+        </div>
+        <button class="btn btn-success form-control">Submit</button>
+        <span asp-validation-for="Name" class="text-danger fs-4"></span>
+    </form>
+</div>
