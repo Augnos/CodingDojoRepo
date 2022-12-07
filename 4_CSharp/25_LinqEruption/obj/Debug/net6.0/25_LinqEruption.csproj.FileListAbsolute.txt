@@ -1,0 +1,15 @@
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/bin/Debug/net6.0/25_LinqEruption
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/bin/Debug/net6.0/25_LinqEruption.deps.json
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/bin/Debug/net6.0/25_LinqEruption.runtimeconfig.json
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/bin/Debug/net6.0/25_LinqEruption.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/bin/Debug/net6.0/25_LinqEruption.pdb
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/obj/Debug/net6.0/25_LinqEruption.csproj.AssemblyReference.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/obj/Debug/net6.0/25_LinqEruption.GeneratedMSBuildEditorConfig.editorconfig
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/obj/Debug/net6.0/25_LinqEruption.AssemblyInfoInputs.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/obj/Debug/net6.0/25_LinqEruption.AssemblyInfo.cs
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/obj/Debug/net6.0/25_LinqEruption.csproj.CoreCompileInputs.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/obj/Debug/net6.0/25_LinqEruption.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/obj/Debug/net6.0/refint/25_LinqEruption.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/obj/Debug/net6.0/25_LinqEruption.pdb
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/obj/Debug/net6.0/25_LinqEruption.genruntimeconfig.cache
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/25_LinqEruption/obj/Debug/net6.0/ref/25_LinqEruption.dll
