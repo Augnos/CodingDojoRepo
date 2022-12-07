@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Generator";
+}
+
+<div class="text-center">
+    @{
+        if (Context.Session.GetString("Location") == "Undisclosed")
+        {
+            <h2>Welcome, @Context.Session.GetString("Username")</h2>
+        }
+        else
+        {
+            <h2>Welcome, @Context.Session.GetString("Username") from @Context.Session.GetString("Location")</h2>
+        }
+    }
+    <h2>Here is your randomly generated passcode:</h2>
+
+    <h1 class="passcode">@Context.Session.GetString("Passcode")</h1>
+
+    <div class="d-flex mx-auto w-50 justify-content-center">
+
+        <form action="reset" method="post">
+            <label>Not you?</label>
+            <input type="submit" value="Log out" class="btn btn-danger">
+        </form>
+
+        <form action="generate/new">
+            <label>Want a new code?</label>
+            <input type="submit" value="New code" class="btn btn-info">
+        </form>
+
+    </div>
+</div>
