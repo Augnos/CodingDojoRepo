@@ -23,8 +23,8 @@ PrintEach(stratovolcanoEruptions, "Stratovolcano eruptions.");
 // Execute Assignment Tasks here!
 
 // Use LINQ to find the first eruption that is in Chile and print the result.
-IEnumerable<Eruption> firstChile = eruptions.Where(eru => eru.Location == "Chile").OrderBy(y => y.Year).Take(1);
-PrintEach(firstChile, "First eruption in Chile.");
+Eruption firstChile = eruptions.Where(eru => eru.Location == "Chile").OrderBy(y => y.Year).First();
+PrintEruption(firstChile, "First eruption in Chile.");
 
 
 // Find the first eruption from the "Hawaiian Is" location and print it. If none is found, print "No Hawaiian Is Eruption found."
@@ -111,7 +111,7 @@ PrintEach(allBefore1000, "All eruptions before 1000 CE.");
 // Redo the last query, but this time use LINQ to only select the volcano's name so that only the names are printed.
 IEnumerable<string> allBefore1000NameOnly = eruptions.Where(eru => eru.Year < 1000).OrderBy(eru => eru.Volcano).Select(eru => eru.Volcano);
 System.Console.WriteLine("\nAll eruptions before 1000 CE. Name only.\n");
-foreach(string volcano in allBefore1000NameOnly) 
+foreach (string volcano in allBefore1000NameOnly)
 {
     System.Console.WriteLine(volcano);
 }
@@ -126,4 +126,10 @@ static void PrintEach(IEnumerable<Eruption> items, string msg = "")
     {
         Console.WriteLine(item.ToString());
     }
+}
+
+static void PrintEruption(Eruption item, string msg = "")
+{
+    Console.WriteLine("\n" + msg);
+    Console.WriteLine(item.ToString());
 }

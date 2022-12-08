@@ -51,10 +51,12 @@ class BinarySearchTree {
         // base case
         vals.push(node.data);
 
-        // recursion
-        if (node.left != null) this.toArrPreorder(node.left, vals);
-        if (node.right != null) this.toArrPreorder(node.right, vals);
-        if (node === this.root) return vals;
+        // recursions
+        node.left && this.toArrPreorder(node.left, vals);
+        node.right && this.toArrPreorder(node.right, vals);
+
+        // return
+        return vals;
     }
 
     /**
@@ -68,15 +70,17 @@ class BinarySearchTree {
      * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
      */
     toArrInorder(node = this.root, vals = []) {
-        if (node.left != null) this.toArrInorder(node.left, vals);
+        // recursion left
+        node.left && this.toArrInorder(node.left, vals);
 
         // base case
         vals.push(node.data);
 
-        if (node.right != null) this.toArrInorder(node.right, vals);
+        // recursion right
+        node.right && this.toArrInorder(node.right, vals);
 
         // return
-        if (node === this.root) return vals;
+        return vals;
 
     }
 
@@ -90,14 +94,14 @@ class BinarySearchTree {
      * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
      */
     toArrPostorder(node = this.root, vals = []) {
-        // recursion
-        if (node.left != null) this.toArrPostorder(node.left, vals);
-        if (node.right != null) this.toArrPostorder(node.right, vals);
+        // recursions
+        node.left && this.toArrPostorder(node.left, vals);
+        node.right && this.toArrPostorder(node.right, vals);
 
         // base case
         vals.push(node.data);
         
-        if (node === this.root) return vals;
+        return vals;
     }
 
     /**
@@ -400,7 +404,6 @@ fullTree.insert(44);
 fullTree.insert(66);
 fullTree.insert(90);
 
-fullTree.print();
 console.log(fullTree.toArrPreorder());
 console.log(fullTree.toArrInorder());
 console.log(fullTree.toArrPostorder());
