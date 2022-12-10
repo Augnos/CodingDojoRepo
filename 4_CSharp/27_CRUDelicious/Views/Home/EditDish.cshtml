@@ -1,0 +1,45 @@
+﻿@model Dish
+@{
+    ViewData["Title"] = "Edit Dish";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Edit @Model.Name</h1>
+</div>
+
+<form asp-action="UpdateDish" asp-controller="Home" asp-route-Id="@Model.DishId" method="post" class="container my-3 p-4 border bg-light rounded border-dark">
+
+    <div class="input-group mb-3">
+        <label asp-for="Name" class="input-group-text">Name</label>
+        <input asp-for="Name" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+        <label asp-for="Chef" class="input-group-text">Chef</label>
+        <input asp-for="Chef" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+        <label asp-for="Tastiness" class="input-group-text">Tastiness</label>
+        <input asp-for="Tastiness" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+        <label asp-for="Calories" class="input-group-text">Calories</label>
+        <input asp-for="Calories" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+        <label asp-for="Description" class="input-group-text">Description</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Dish</button>
+
+    <div class="mt-3"><span asp-validation-for="Name" class="text-danger"></span></div>
+    <div class="mt-3"><span asp-validation-for="Chef" class="text-danger"></span></div>
+    <div class="mt-3"><span asp-validation-for="Tastiness" class="text-danger"></span></div>
+    <div class="mt-3"><span asp-validation-for="Calories" class="text-danger"></span></div>
+    <div class="mt-3"><span asp-validation-for="Description" class="text-danger"></span></div>
+</form>
+
