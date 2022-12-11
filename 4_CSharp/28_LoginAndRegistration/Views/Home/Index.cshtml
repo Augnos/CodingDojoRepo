@@ -1,7 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-    @await Html.PartialAsync("_Navbar")
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-lg-6 col-12">
+            @await Html.PartialAsync("_UserRegistration")
+        </div>
+        <div class="col-lg-6 col-12">
+            @await Html.PartialAsync("_UserLogin")
+        </div>
+    </div>
+</div>

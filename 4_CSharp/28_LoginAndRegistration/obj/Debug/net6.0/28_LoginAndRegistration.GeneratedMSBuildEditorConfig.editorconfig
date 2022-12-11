@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/Views/Home/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9EYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -29,6 +33,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/Views/Shared/_Navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19OYXZiYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/Views/Shared/_UserLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Vc2VyTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/Views/Shared/_UserRegistration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Vc2VyUmVnaXN0cmF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/Views/Shared/_ValidationScriptsPartial.cshtml]

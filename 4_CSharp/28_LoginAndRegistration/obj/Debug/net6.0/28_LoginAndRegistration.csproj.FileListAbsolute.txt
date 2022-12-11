@@ -24,3 +24,12 @@
 /Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/obj/Debug/net6.0/28_LoginAndRegistration.pdb
 /Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/obj/Debug/net6.0/28_LoginAndRegistration.genruntimeconfig.cache
 /Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/obj/Debug/net6.0/ref/28_LoginAndRegistration.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/bin/Debug/net6.0/Humanizer.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/bin/Debug/net6.0/MySqlConnector.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+/Users/augnos/GitRepos/CodingDojoRepo/4_CSharp/28_LoginAndRegistration/obj/Debug/net6.0/28_LoginAndRegistration.csproj.CopyComplete
