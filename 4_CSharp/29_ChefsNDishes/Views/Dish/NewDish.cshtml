@@ -1,0 +1,53 @@
+@model Dish
+
+<form asp-action="CreateDish" asp-controller="Dish" method="post"
+    class="container my-3 p-4 border bg-danger bg-opacity-25 rounded border-light">
+    <h2 class="fw-light">Add a dish</h2>
+
+    @* Dish Name Input *@
+    <div class="input-group mb-3">
+        <label asp-for="Name" class="input-group-text">Name</label>
+        <input asp-for="Name" class="form-control">
+    </div>
+
+    @* Calories Input *@
+    <div class="input-group mb-3">
+        <label asp-for="Calories" class="input-group-text">Calories</label>
+        <input asp-for="Calories" class="form-control">
+    </div>
+
+    @* Tastiness Dropdown *@
+    <div class="input-group mb-3">
+        <label asp-for="Tastiness" class="input-group-text">Tastiness</label>
+        <select asp-for="Tastiness" class="form-select">
+            <option selected disabled>Pick a rating from 1 to 5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+
+    @* Chef Dropdown *@
+    <div class="input-group mb-3">
+        <label asp-for="ChefId" class="input-group-text">Chef</label>
+        <select asp-for="ChefId" class="form-select">
+            <option  selected disabled>Choose the chef</option>
+            @foreach (Chef chef in @ViewBag.AllChefs)
+            {
+                <option value="@chef.ChefId">@chef.FirstName @chef.LastName</option>
+            }
+        </select>
+    </div>
+
+    @* Submit button *@
+    <button type="submit" class="btn btn-outline-light">Submit Dish</button>
+
+    @* Validations *@
+    <div class="mt-1"><span asp-validation-for="Name" class="text-danger"></span></div>
+    <div class="mt-1"><span asp-validation-for="Calories" class="text-danger"></span></div>
+    <div class="mt-1"><span asp-validation-for="Tastiness" class="text-danger"></span></div>
+    <div class="mt-1"><span asp-validation-for="ChefId" class="text-danger"></span></div>
+
+</form>

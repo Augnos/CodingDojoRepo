@@ -50,6 +50,7 @@ public class HomeController : Controller
             _context.Add(newUser);
             _context.SaveChanges();
             HttpContext.Session.SetInt32("UserId", newUser.UserId);
+            HttpContext.Session.SetString("FirstName", newUser.FirstName);
             return RedirectToAction("Dashboard");
         }
         return View("Index");
@@ -75,6 +76,7 @@ public class HomeController : Controller
                 return View("Index");
             }
             HttpContext.Session.SetInt32("UserId", userInDb.UserId);
+            HttpContext.Session.SetString("FirstName", userInDb.FirstName);
             return RedirectToAction("Dashboard");
         }
         return View("Index");
@@ -149,7 +151,7 @@ public class SessionCheckAttribute : ActionFilterAttribute
         // Find the session, but remember it may be null so we need int?
         int? userId = context.HttpContext.Session.GetInt32("UserId");
         // Check to see if we got back null
-        if(userId == null)
+        if (userId == null)
         {
             // Redirect to the Index page if there was nothing in session
             // "Home" here is referring to "HomeController", you can use any controller that is appropriate here

@@ -1,0 +1,29 @@
+@model Chef
+
+<form asp-action="CreateChef" asp-controller="Chef" method="post"
+    class="container my-3 p-4 border bg-danger bg-opacity-25 rounded border-light">
+
+    <h2 class="fw-light">Add a chef</h2>
+    <div class="input-group mb-3">
+        <label asp-for="FirstName" class="input-group-text">First Name</label>
+        <input asp-for="FirstName" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+        <label asp-for="LastName" class="input-group-text">Last Name</label>
+        <input asp-for="LastName" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+        <label asp-for="DateOfBirth" class="input-group-text">Date of Birth</label>
+        <input asp-for="DateOfBirth" type="date" class="form-control">
+    </div>
+
+
+    <button type="submit" class="btn btn-outline-light">Register</button>
+
+    <div class="mt-1"><span asp-validation-for="FirstName" class="text-danger"></span></div>
+    <div class="mt-1"><span asp-validation-for="LastName" class="text-danger"></span></div>
+    <div class="mt-1"><span asp-validation-for="DateOfBirth" class="text-danger"></span></div>
+
+</form>
