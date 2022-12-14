@@ -5,9 +5,10 @@ namespace _29_ChefsNDishes.Models;
 // Dish Model
 public class Dish
 {
-    [Key]
+    [Key]   // Primary Key
     public int DishId { get; set; }
 
+    // Fields
     [Required(ErrorMessage = "Name is required.")]
     public string Name { get; set; }
 
@@ -19,10 +20,11 @@ public class Dish
     [Range(1, 5, ErrorMessage = "Tastiness scale is from 1 to 5.")]
     public int? Tastiness { get; set; }
 
-    // One-to-Many Fields: Chef to Dishes
+    // M:1 Fields
     [Required(ErrorMessage = "Chef is required.")]
     public int? ChefId { get; set; }
-
+    
+    // M:1 Navigation Properties
     public Chef? Creator { get; set; }
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;

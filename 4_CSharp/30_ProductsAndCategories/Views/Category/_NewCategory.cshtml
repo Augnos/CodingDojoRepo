@@ -1,0 +1,16 @@
+@model Category
+
+<h2 class="fw-light display-4 text-center mb-5">New Category</h2>
+<form asp-action="CreateCategory" asp-controller="Category" method="post"
+    class="container my-3 p-4 border bg-success bg-opacity-25 rounded border-light">
+
+    <div class="input-group mb-3">
+        <label asp-for="Name" class="input-group-text">Name</label>
+        <input asp-for="Name" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-outline-light">Create</button>
+
+    <div class="mt-1"><span asp-validation-for="Name" class="text-danger"></span></div>
+
+</form>

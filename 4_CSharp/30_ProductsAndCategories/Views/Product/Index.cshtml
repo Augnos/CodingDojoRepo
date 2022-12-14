@@ -1,0 +1,18 @@
+﻿@model MyViewModel
+@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="container d-flex flex-lg-row flex-column-reverse">
+
+        <div class="col-lg-6 col-12">
+            @await Html.PartialAsync("_NewProduct", Model.Product)
+        </div>
+
+        <div class="border border-light m-3"></div>
+
+        <div class="col-lg-6 col-12">
+            @await Html.PartialAsync("_AllProducts", Model.AllProducts)
+        </div>
+
+</div>

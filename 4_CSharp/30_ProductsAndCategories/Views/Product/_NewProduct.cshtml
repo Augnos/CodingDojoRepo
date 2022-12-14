@@ -1,0 +1,29 @@
+@model Product
+
+<h2 class="fw-light display-4 text-center mb-5">New Product</h2>
+<form asp-action="CreateProduct" asp-controller="Product" method="post"
+    class="container my-3 p-4 border bg-primary bg-opacity-25 rounded border-light">
+
+    <div class="input-group mb-3">
+        <label asp-for="Name" class="input-group-text">Name</label>
+        <input asp-for="Name" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+        <label asp-for="Description" class="input-group-text">Description</label>
+        <input asp-for="Description" class="form-control">
+    </div>
+
+    <div class="input-group mb-3">
+        <label asp-for="Price" class="input-group-text">Price</label>
+        <input asp-for="Price" type="number" step="0.01" class="form-control">
+    </div>
+
+
+    <button type="submit" class="btn btn-outline-light">Create</button>
+
+    <div class="mt-1"><span asp-validation-for="Name" class="text-danger"></span></div>
+    <div class="mt-1"><span asp-validation-for="Description" class="text-danger"></span></div>
+    <div class="mt-1"><span asp-validation-for="Price" class="text-danger"></span></div>
+
+</form>

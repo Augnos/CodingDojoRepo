@@ -1,0 +1,72 @@
+@model MyViewModel
+@{
+    ViewData["Title"] = @Model.Category.Name;
+}
+
+<div class="container d-flex flex-lg-row flex-column-reverse">
+
+
+    <div class="col-lg-6 col-12">
+        <h2 class="fw-light text-center mb-5">@Model.Category.Name</h2>
+        <div class="mt-5">
+            <div class="col-lg-7 col-10 mx-auto text-start">
+                <h3>Products</h3>
+                @foreach(ProdCatAssn association in Model.Category.ProductList)
+                {
+                    <p>@association.Product.Name</p>
+                }
+
+            </div>
+        </div>
+
+        @* Delete/Edit Category *@
+        <form asp-action="DestroyCategory" asp-route-Id="@Model.Category.CategoryId" method="post" class="my-3">
+            <div class="row justify-content-evenly">
+                <button class="col-auto btn btn-danger" type="submit">Delete</button>
+                @* <a asp-action="EditCategory" asp-route-Id="@Model.Category.CategoryId"
+                    class="col-auto btn btn-primary">Edit</a> *@
+            </div>
+        </form>
+    </div>
+
+    <div class="border border-light m-3"></div>
+
+    <div class="col-lg-6 col-12">
+        <h3 class="text-center">Add Product</h3>
+
+        <form asp-action="CreateCategoryAssociation" method="post"
+            class="container my-3 p-4 border bg-success bg-opacity-25 rounded border-light">
+
+            @* Product Dropdown *@
+            <div class="input-group mb-3">
+                <label asp-for="ProductId" class="input-group-text">Product</label>
+                <select asp-for="ProductId" class="form-select">
+                    <option selected disabled>Choose a product to add</option>
+                    @foreach (Product product in Model.AllProducts)
+                    {
+                        bool temp = true;
+                        foreach (ProdCatAssn association in product.CategoryList)
+                        {
+                            if (association.CategoryId == Model.Category.CategoryId) temp = false;
+                        }
+
+                        if (temp)
+                        {
+                            <option value="@product.ProductId">@product.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div></div>
+            <input type="hidden" asp-for="CategoryId" value="@Model.Category.CategoryId"></input>
+
+            @* Submit button *@
+            <button type="submit" class="btn btn-outline-light">Add</button>
+            @* Validations *@
+            <div class="mt-1"><span asp-validation-for="ProductId" class="text-danger"></span></div>
+            <div class="mt-1"><span asp-validation-for="CategoryId" class="text-danger"></span></div>
+
+        </form>
+    </div>
+
+</div>

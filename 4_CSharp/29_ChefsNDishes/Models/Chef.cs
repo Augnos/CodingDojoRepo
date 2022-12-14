@@ -3,9 +3,10 @@ using System.ComponentModel.DataAnnotations;
 namespace _29_ChefsNDishes.Models;
 public class Chef
 {
-    [Key]
+    [Key]   // Primary Key
     public int ChefId { get; set; }
 
+    // Fields
     [Required(ErrorMessage = "First name is required.")]
     public string FirstName { get; set; }
 
@@ -15,8 +16,10 @@ public class Chef
     [OverEighteen]
     public DateTime DateOfBirth { get; set; }
 
+    // 1:M Navigation Properties
     public List<Dish> CreatedDishes { get; set; } = new List<Dish>();
 
+    // Timestamps
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 }

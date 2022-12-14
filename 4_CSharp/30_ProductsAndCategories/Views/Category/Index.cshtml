@@ -1,0 +1,20 @@
+﻿@model MyViewModel
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<div class="container d-flex flex-lg-row flex-column-reverse">
+
+
+        <div class="col-lg-6 col-12">
+            @await Html.PartialAsync("_NewCategory", Model.Category)
+        </div>
+
+        <div class="border border-light m-3"></div>
+
+        <div class="col-lg-6 col-12">
+            @await Html.PartialAsync("_AllCategories", Model.AllCategories)
+        </div>
+
+
+</div>

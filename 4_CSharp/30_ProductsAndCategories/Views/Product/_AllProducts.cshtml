@@ -1,0 +1,10 @@
+﻿@model List<Product>
+
+<div class="container">
+    <h2 class="fw-light display-4 text-center mb-5">All Products</h2>
+
+    @foreach (Product product in Model)
+    {
+        <p><a href="/products/@product.ProductId">@product.Name</a></p>
+    }
+</div>
