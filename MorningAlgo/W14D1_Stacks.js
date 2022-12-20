@@ -73,6 +73,7 @@ class StackNode {
     constructor(data) {
         this.data = data;
         this.next = null;
+        this.size = 0;
     }
 }
 
@@ -81,19 +82,11 @@ class LinkedListStack {
         this.head = null;
     }
 
-    /**
-     * Creates a new node with the given data and inserts it at the back of
-     * this list.
-     * - Time: O(n) linear, n = length of list.
-     * - Space: O(1) constant.
-     * @param {any} data The data to be added to the new node.
-     * @returns {SinglyLinkedList} This list.
-    */
     push(data) {
-        const newBack = new StackNode(data);
+        const newNode = new StackNode(data);
 
         if (this.isEmpty()) {
-            this.head = newBack;
+            this.head = newNode;
             return this;
         }
 
@@ -222,6 +215,7 @@ newStack = new LinkedListStack;
 emptyStack = new LinkedListStack;
 
 
+console.log(newStack.push(3));
 console.log(newStack.push(3));
 console.log(newStack.push(5));
 console.log(newStack.push(7));
